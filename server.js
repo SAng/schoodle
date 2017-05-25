@@ -43,6 +43,33 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
+// Event Creation
+app.post("/events", (req, res) => {
+
+});
+
+// Show Event
+app.get("/events/:long_url", (req, res) => {
+
+});
+
+// Add User
+app.post("/events/:long_url/users", (req, res) => {
+
+});
+
+// Delete User
+app.post("events/:long_url/users/:userid/delete", (req, res) => {
+
+});
+
+//Update User
+app.post("events/:long_url/users/:userid", (req, res) => {
+
+});
+
+
+
 app.listen(PORT, () => {
   console.log("Example app listening on port " + PORT);
 });
