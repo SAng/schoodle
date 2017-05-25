@@ -13,25 +13,23 @@ $(() => {
 
 
   //EVENT HANDLER: Make Continue button appear after 'Event Details' page is filled.
-  $(".event-details-form").
+  $('.event-details-form').on('change' function() {
+    var $eventTitle = $('.event-title').val();
+    if($eventTitle !== "") {
+      $('.submit-button').hide();
+    }
+  });
 
   //EVENT HANDLER:
   //When clicking the submit button after filling out 'Event Details' page,
   //eventdetails container will toggle up.
-  $(".event-details-form").('submit', function (event) {
-    event.preventDefault();
-    $(".event-details").slidetoggle("fast", function() {
-      $.ajax({
-        method: 'POST',
-        url: '/',
-        data: $("form").serialize()
-      }).done();
-      // success(data => {
-      //   $tweetSection.prepend(createTweetElement(tweet));
-      // }).error(error => {
-      //   console.log('error', error);
-      // });
+  $('.submit-button').on('click', function(event) {
+    $('.event-details').slideToggle("fast", function() {
     });
   });
+
+
+
+
 
 });
