@@ -1,0 +1,28 @@
+body {
+  background-color: #eee;
+
+  h1 {
+    color: #244751;
+  }
+}
+
+.owner-info {
+  background-color: red;
+}
+
+.event-details {
+  background-color: blue;
+}
+
+.event-title {
+  padding: 2%;
+  width: 10%;
+}
+
+.event-description {
+  padding: 2%;
+}
+
+.date-picker {
+  background-color: green;
+}
