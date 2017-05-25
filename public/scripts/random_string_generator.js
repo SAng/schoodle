@@ -1,5 +1,5 @@
 module.exports =
-  function generateRandomString(n) {
+  (n) => {
     let result = '';
     const chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     for (let i = n; i > 0; --i) {
