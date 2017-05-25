@@ -43,6 +43,11 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
+// Home page
+app.get("/events", (req, res) => {
+  res.render("create_events");
+});
+
 // Event Creation
 app.post("/events", (req, res) => {
 
@@ -50,7 +55,8 @@ app.post("/events", (req, res) => {
 
 // Show Event
 app.get("/events/:long_url", (req, res) => {
-
+  let templateVars = extractEventData(knex, req.params.id);
+  res.render("event_page", templateVars)
 });
 
 // Add User
