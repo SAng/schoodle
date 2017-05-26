@@ -1,0 +1,31 @@
+.long-url {
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.table-slot {
+  margin: auto;
+}
+
+th {
+  padding: 10px;
+}
+
+td {
+  padding: 10px;
+}
+
+.row:before {
+    display: table;
+    content: none;
+}
+
+i .fa {
+  font-size: 35px;
+  text-align: center;
+  color: grey;
+  padding: 18px;
+}
