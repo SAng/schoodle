@@ -41,13 +41,11 @@ $(() => {
     $('.date-picker').hide();
   });
 
-  $('.delete-date-button').on('click', function(e) {
+  //EVENT HANDLER: Deletes dates
+  $('.event-date-time').on('click', '.delete-date-button', function(e) {
     e.preventDefault();
-    $(this).remove();
+    $(this).closest('form').remove();
   });
-
-
-
 
 
 
