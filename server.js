@@ -43,6 +43,39 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
+// Home page
+app.get("/events", (req, res) => {
+  res.render("create_events");
+});
+
+// Event Creation
+app.post("/events", (req, res) => {
+
+});
+
+// Show Event
+app.get("/events/:long_url", (req, res) => {
+  let templateVars = extractEventData(knex, req.params.id);
+  res.render("event_page", templateVars)
+});
+
+// Add User
+app.post("/events/:long_url/users", (req, res) => {
+
+});
+
+// Delete User
+app.post("events/:long_url/users/:userid/delete", (req, res) => {
+
+});
+
+//Update User
+app.post("events/:long_url/users/:userid", (req, res) => {
+
+});
+
+
+
 app.listen(PORT, () => {
   console.log("Example app listening on port " + PORT);
 });
