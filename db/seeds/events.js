@@ -3,7 +3,8 @@ exports.seed = function(knex, Promise) {
     .then(function () {
       return Promise.all([
         knex('events').insert({id: 1, title: 'Fun Event', description: "abc", long_url: "abckjsdlf"}),
-        knex('events').insert({id: 2, title: 'Fun Event2', description: "abc2", long_url: "abckjsdlfds2"})
+        knex('events').insert({id: 2, title: 'Fun Event2', description: "abc2", long_url: "abckjsdlfds2"}),
+        knex('events').insert({id: 3, title: 'Empty Fun Event2', description: "abc2", long_url: "abckjsdlfds3"})
       ]);
     });
 };
