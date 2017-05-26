@@ -50,6 +50,7 @@ app.get("/events", (req, res) => {
 
 // Event Creation
 app.post("/events", (req, res) => {
+  console.log(req.body);
 
 });
 
@@ -73,7 +74,6 @@ app.post("events/:long_url/users/:userid/delete", (req, res) => {
 app.post("events/:long_url/users/:userid", (req, res) => {
 
 });
-
 
 
 app.listen(PORT, () => {

@@ -1,9 +1,9 @@
 body {
   background-color: #eee;
+}
 
-  h1 {
-    color: #244751;
-  }
+body h1 {
+  color: #244751;
 }
 
 .container {
@@ -14,8 +14,6 @@ body {
   max-width: 75%s;
   padding: 2em;
 }
-
-
 
 #nav-bar {
   background-color: #3DB8B1;
@@ -28,6 +26,7 @@ body {
   width: 100%;
   z-index: 1;
 }
+
 #nav-bar .logo {
   float: left;
   height: 80px;
@@ -50,23 +49,42 @@ body {
   padding: 15px;
 }
 
+/* EVENT CREATION FORM */
+.event-title {
+  padding: 1%;
+  width: 30%;
+}
+
+.event-description {
+  padding: 1%;
+  width: 30%;
+}
+
+.owner-name,
+.owner-email {
+  padding: 1%;
+  width: 30%;
+}
+
+.submit-button {
+  margin: 5%;
+  padding: 2%;
+}
+
 .event-date-time {
   padding: 20px;
 }
 
 .date-picker {
   padding: 20px;
-  background-color: blue;
 }
 
 .start-time,
-.end-time     {
+.end-time {
   margin: 20px;
   padding: 10px;
 }
 
-
-
-
-
-
+.duplicate-event-form {
+  display: none;
+}
