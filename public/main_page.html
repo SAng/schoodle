@@ -43,29 +43,15 @@
       </form>
     </section>
 
-    <section class="date-picker">
-      <section class="calendar-select">
-        <p>this is where the calendar api will go</p>
-          <div style="overflow:hidden;">
-              <div class="form-group">
-                  <div class="row">
-                      <div class="col-md-8">
-                          <div id="datetimepicker12"></div>
-                      </div>
-                  </div>
-              </div>
-              <script type="text/javascript">
-                  $(function () {
-                      $('#datetimepicker12').datetimepicker({
-                          inline: true,
-                          sideBySide: true
-                      });
-                  });
-              </script>
-          </div>
-      </section>
-      <section class="time-slots">
-        <p>this is where the time slots will go</p>
+    <section class="event-date-time">
+        <form action="#" method="POST">
+          <input type="date" class="date-picker" name="date-picker">
+          Start Time:
+          <input type="time" class="start-time" name="start-time">
+          End Time:
+          <input type="time" class="end-time" name="end-time">
+          <input type="submit" class="submit-button" value="submit">
+        </form>
       </section>
     </section>
   </main>
