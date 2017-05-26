@@ -17,6 +17,8 @@ const knexLogger  = require('knex-logger');
 // Seperated Routes for each Resource
 const usersRoutes = require("./routes/users");
 
+const eventsRoutes = require("./routes/events");
+
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
 // 'dev' = Concise output colored by response status for development use.
 //         The :status token will be colored red for server error codes, yellow for client error codes, cyan for redirection codes, and uncolored for all other codes.
@@ -36,7 +38,10 @@ app.use("/styles", sass({
 app.use(express.static("public"));
 
 // Mount all resource routes
-app.use("/api/users", usersRoutes(knex));
+app.use("/api/users/", usersRoutes(knex));
+
+// Mount events resource route
+app.use("/api/events", eventsRoutes(knex));
 
 // Home page
 app.get("/", (req, res) => {
@@ -56,7 +61,7 @@ app.post("/events", (req, res) => {
 // Show Event
 app.get("/events/:long_url", (req, res) => {
   let templateVars = extractEventData(knex, req.params.id);
-  res.render("event_page", templateVars)
+  res.render("event_page", templateVars);
 });
 
 // Add User
