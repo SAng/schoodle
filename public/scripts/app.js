@@ -13,15 +13,15 @@ $(() => {
 
 
   //EVENT HANDLER: Make Continue button appear after 'Event Details' page is filled.
-  $('.event-details-form').on('change', function(event) {
-    event.preventDefault();
-    var $eventTitle = $('.event-title').val();
-    $('.date-picker').hide();
-    $('.owner-info').hide();
-    if($eventTitle !== "") {
-      $('.submit-button').hide();
-    }
-  });
+  // $('.event-details-form').on('change', function(event) {
+  //   event.preventDefault();
+  //   var $eventTitle = $('.event-title').val();
+  //   // $('.date-picker').hide();
+  //   // $('.owner-info').hide();
+  //   if($eventTitle !== "") {
+  //     $('.submit-button').hide();
+  //   }
+  // });
 
   //EVENT HANDLER:
   //When clicking the submit button after filling out 'Event Details' page,
@@ -29,8 +29,17 @@ $(() => {
   $('.submit-button').on('click', function(event) {
     $('.event-details').slideToggle("fast", function() {
     });
-    // $('.date-picker').show();
+     $('.date-picker').show();
+  });
+
+  $('#datetimepicker12').datetimepicker({
+      inline: true,
+      sideBySide: true
+
   });
 
 
 });
+
+
+
