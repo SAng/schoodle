@@ -84,7 +84,7 @@ module.exports = (knex) => {
         }
       }).then(validCombination => {return Promise.all([promise1, promise2])
                                           .then(function(){})});
-
+        res.redirect("/events/" + req.params.long_url);
   });
 
   //Update Event Data ** TRANSACTING
