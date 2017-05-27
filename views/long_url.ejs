@@ -40,7 +40,7 @@
           <th></th>
           <th>Participants</th>
           <% for (var slot of slots) { %>
-            <th> <%= slot.time %> </th>
+            <th> <%= slot.date %> </br> <%= slot.start_time %>-</br> <%= slot.end_time %> </th>
           <% } %>
         </tr >
         <% for (var user_id in users) { %>
@@ -48,11 +48,11 @@
           <tr class="row">
             <td class="button-column">
               <button class="delete-participant" hidden> Delete </button>
-              <input type="submit" class="submit-button" value="Submit" hidden>
               <button class="edit-participant"> Edit </button>
+              <input type="submit" class="submit-button" value="Submit" hidden>
             </td>
             <td class="participant-column">
-              <input type="text" class="add-participant-text" value="<%= user.name %>" />
+              <p><%= user.name %></p>
             </td>
             <% for (var slot of slots) { %>
               <% if (slot.users.includes(Number(user_id))) { %>
