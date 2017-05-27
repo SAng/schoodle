@@ -42,6 +42,9 @@ app.use(express.static("public"));
 
 app.use("/api/events", events_apiRoutes(knex));
 app.use("/events", eventsRoutes(knex));
+app.get("/", (req, res) => {
+    res.render("index")
+  });
 
 // Home page
 // app.get("/", (req, res) => {
