@@ -15,7 +15,9 @@ const morgan      = require('morgan');
 const knexLogger  = require('knex-logger');
 
 // Seperated Routes for each Resource
-const usersRoutes = require("./routes/users");
+const users_apiRoutes = require("./routes/users_api");
+const events_apiRoutes = require("./routes/events_api");
+const eventsRoutes = require("./routes/events")
 
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
 // 'dev' = Concise output colored by response status for development use.
@@ -27,6 +29,7 @@ app.use(knexLogger(knex));
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 app.use("/styles", sass({
   src: __dirname + "/styles",
   dest: __dirname + "/public/styles",
@@ -36,12 +39,15 @@ app.use("/styles", sass({
 app.use(express.static("public"));
 
 // Mount all resource routes
-app.use("/api/users", usersRoutes(knex));
+app.use("/api/users/", users_apiRoutes(knex));
+app.use("/api/events", events_apiRoutes(knex));
+app.use("/events", eventsRoutes(knex));
 
 // Home page
 // app.get("/", (req, res) => {
 //   res.render("index");
 // });
+
 
 
 app.listen(PORT, () => {
