@@ -6,7 +6,9 @@ module.exports =
     result.title = eventData[0].title;
     result.description = eventData[0].description;
     result.slots = organize_slot_data(slotData);
-    result.users = userData;
-
+    result.users = {};
+    userData.forEach(function(element){
+      result.users[element.id] = element
+    });
     return result;
   };
