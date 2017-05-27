@@ -81,7 +81,8 @@ app.post("/create-event", (req, res) => {
     if (!userFound) {
       knex.insert(userData).into("users").then(function (id) {
         userId = id;
-        console.log("We found a match! " + id);
+        console.log("We are creating a new user with this id: ");
+        console.log(id);
       })
     }
 
