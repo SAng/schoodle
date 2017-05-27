@@ -41,18 +41,6 @@ $(() => {
   //POST request when someone add themselves as participant
   $('.submit-button').on('click', function(e) {
     e.preventDefault();
-    if() {
-      else
-    }
-    $.ajax({
-        method: 'POST',
-        url: '/:long_url/users/:userid',
-        data: $(this).serialize()
-      }).success(tweet => {
-        $tweetSection.prepend(createTweetElement(tweet));
-      }).error(error => {
-        console.log('error', error);
-      });
   });
 
   //SUBMIT to add participants/time slots to database

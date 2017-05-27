@@ -1,14 +1,5 @@
 $(() => {
 
-  // $.ajax({
-  //   method: "GET",
-  //   url: "/api/users"
-  //   }).done((users) => {
-  //   for(user of users) {
-  //     $("<div>").text(user.name).appendTo($("body"));
-  //   }
-  // });
-
   //EVENT HANDLER:
   //When clicking the submit button after filling out 'Event Details' page,
   //eventdetails container will toggle up.

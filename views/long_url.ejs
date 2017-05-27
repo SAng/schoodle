@@ -40,11 +40,11 @@
           <th></th>
           <th>Participants</th>
           <% for (var slot of slots) { %>
-            <th> <%= slot.time %></th>
+            <th> <%= slot.time %> </th>
           <% } %>
-        </tr>
+        </tr >
         <% for (var user_id in users) { %>
-          <% var user = users[user_id]; %>
+          <% var user = users[user_id] %>
           <tr class="row">
             <td class="button-column">
               <button class="delete-participant" hidden> Delete </button>
@@ -55,7 +55,11 @@
               <input type="text" class="add-participant-text" value="<%= user.name %>" />
             </td>
             <% for (var slot of slots) { %>
-              <td><i class="fa fa-check-circle" aria-hidden="true">slot</i></td>
+              <% if (slot.users.includes(Number(user_id))) { %>
+                <td><i class="fa fa-check-circle" aria-hidden="true"></i></td>
+              <% } else { %>
+                <td><i class="fa fa-circle-o" aria-hidden="true"></i></td>
+              <% } %>
             <% } %>
           </tr>
         <% } %>
@@ -66,7 +70,6 @@
   <footer class="footer">
     <section class="long-url">
       <div class="long-url">
-        <!-- <p>https://www.Schoodlele.com/event/long id generated</p> -->
         <input type="text" class="long-url" name="long-url" value="https://www.Schoodlele.com/event/long id generated">
       </div>
     </section>
