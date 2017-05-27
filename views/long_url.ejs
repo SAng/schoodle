@@ -52,7 +52,8 @@
               <input type="submit" class="submit-button" value="Submit" hidden>
             </td>
             <td class="participant-column">
-              <p><%= user.name %></p>
+              <p class="participant-name"><%= user.name %></p>
+              <input type="text" class="text-box" hidden>
             </td>
             <% for (var slot of slots) { %>
               <% if (slot.users.includes(Number(user_id))) { %>

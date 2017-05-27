@@ -16,7 +16,7 @@ $(() => {
     var $submitButton = $("<input type='submit' value='Submit'>").addClass("submit-button");
     var $deleteParticipantBtn = $("<button> Delete </button>").addClass("delete-participant");
     var $div = $("<div>").addClass("add-participant");
-    var $textBox = $("<input type='text'>").addClass("add-participant-text");
+    var $textBox = $("<input type='text'>").addClass("text-box");
 
     $buttonColumn.append( $editParticipantBtn, $deleteParticipantBtn, $submitButton );
     $participantColumn.append( $textBox );
@@ -31,12 +31,18 @@ $(() => {
     $(this).closest('tr').remove();
   });
 
+  //Get data from main_page to render on to long-url page
 
   //Copy button on long URL
 
 
   //When clicking Edit, make participant text box be able to type
-
+  $('.edit-participant').on('click', function (e) {
+    e.preventDefault();
+    $('.participant-name').hide();
+    // $('.table-slot').find('.row').closest('.text-box').show();
+    $('.text-box').show();
+  });
 
   //POST request when someone add themselves as participant
   $('.submit-button').on('click', function(e) {
