@@ -31,6 +31,10 @@ $(() => {
     $(this).closest('tr').remove();
   });
 
+  $('.table-slot').on('click', '.edit-participant', function(e) {
+    e.preventDefault();
+    $(this).closest('tr').addClass('editable');
+  });
 
   //Copy button on long URL
 
