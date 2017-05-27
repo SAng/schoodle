@@ -90,6 +90,7 @@ app.post("/create-event", (req, res) => {
       description : req.body.description,
       owner_id: userId
     };
+
     console.log(eventData);
     // write event, with the user's id
     knex.insert(eventData).into("events").then(function (id) {
