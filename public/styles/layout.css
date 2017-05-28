@@ -10,44 +10,26 @@ body {
   background-color: #ffffff;
   clear: both;
   margin: 0 auto;
-  margin-top: 80px;
-  max-width: 75%s;
+  margin-top: 105px;
+  max-width: 70%;
   padding: 2em;
+  border-radius: 20px;
 }
 
-
-
-#nav-bar {
-  background-color: #3DB8B1;
-  clear: both;
-  color: #e8fdff;
-  height: 80px;
-  padding: 0 2em 0 2em;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1;
-}
-#nav-bar .logo {
-  float: left;
-  height: 80px;
-  padding-right: 10px;
-  width: 80px;
+h1 {
+  text-align: center;
+  color: grey;
 }
 
-#nav-bar .header {
-  float: left;
-  font-size: 200%;
-  line-height: 80px;
+.create-button {
+  text-align: center;
 }
 
-#login {
-  background-color: white;
-  border-radius: 5px;
-  float: right;
-  margin-top: 12px;
-  opacity: 0.5;
+.new-event {
+  margin: 30px;
   padding: 15px;
+  border-radius: 10px;
+  background-color: white;
 }
 
 .event-date-time {
@@ -60,8 +42,36 @@ body {
 
 .start-time,
 .end-time     {
-  margin: 20px;
-  padding: 10px;
+  /*margin: 20px;
+  padding: 10px;*/
+  font-size: x-large;
+  border-radius: 12px;
+  border-style: outset;
+  border-width: thick;
+}
+
+.icon {
+  text-align: center;
+}
+
+.fa.fa-calendar-plus-o {
+    font-size: 230px;
+    color: grey;
+}
+
+.btn {
+  float: right;
+}
+
+input.date-picker {
+  border-radius: 20px;
+  border-style: dashed;
+  font-size: medium;
+  padding: 7px;
+}
+
+.form-horizontal {
+  text-align: center;
 }
 
 
