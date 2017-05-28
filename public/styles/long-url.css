@@ -24,12 +24,14 @@ td {
     border-width: 5px;
     border-color: red;
 }
+
 .row:before {
     display: table;
     content: none;
 }
 
-i .fa {
+.fa.fa-check-circle,
+.fa.fa-circle-o {
   font-size: 35px;
   text-align: center;
   color: grey;

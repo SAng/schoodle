@@ -1,5 +1,6 @@
 #nav-bar {
-  background-color: #3DB8B1;
+  /*background-color: #3DB8B1;*/
+  background-color: #B0A4BE;
   clear: both;
   color: #e8fdff;
   height: 80px;
@@ -17,21 +18,12 @@
 }
 
 #home {
-  background-color: white;
-  border-radius: 5px;
-  float: right;
-  margin-top: 12px;
-  opacity: 0.5;
-  padding: 15px;
-}
-
-/*#home {
   float: right;
   margin: 15px;
   padding: 12px;
   border-radius: 10px;
   background-color: #DADDE6;
-}*/
+}
 
 .fa.fa-calendar {
   float: left;

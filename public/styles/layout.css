@@ -10,18 +10,26 @@ body {
   background-color: #ffffff;
   clear: both;
   margin: 0 auto;
-  margin-top: 80px;
-  max-width: 75%;
+  margin-top: 105px;
+  max-width: 70%;
   padding: 2em;
+  border-radius: 20px;
 }
 
-#login {
-  background-color: white;
-  border-radius: 5px;
-  float: right;
-  margin-top: 12px;
-  opacity: 0.5;
+h1 {
+  text-align: center;
+  color: grey;
+}
+
+.create-button {
+  text-align: center;
+}
+
+.new-event {
+  margin: 30px;
   padding: 15px;
+  border-radius: 10px;
+  background-color: white;
 }
 
 .event-date-time {
@@ -34,10 +42,37 @@ body {
 
 .start-time,
 .end-time     {
-  margin: 20px;
-  padding: 10px;
+  /*margin: 20px;
+  padding: 10px;*/
+  font-size: x-large;
+  border-radius: 12px;
+  border-style: outset;
+  border-width: thick;
 }
 
+.icon {
+  text-align: center;
+}
+
+.fa.fa-calendar-plus-o {
+    font-size: 230px;
+    color: grey;
+}
+
+.btn {
+  float: right;
+}
+
+input.date-picker {
+  border-radius: 20px;
+  border-style: dashed;
+  font-size: medium;
+  padding: 7px;
+}
+
+.form-horizontal {
+  text-align: center;
+}
 
 
 

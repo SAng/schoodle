@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="../styles/long-url.css" type="text/css" />
     <link rel="stylesheet" href="../styles/font-awesome-4.7.0/css/font-awesome.min.css">
     <script type="text/javascript" src="../vendor/jquery-3.0.0.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
+    <!-- // <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script> -->
     <link rel="stylesheet" href="../styles/nav.css" type="text/css" />
 
     <script type="text/javascript" src="../scripts/bootstrap.min.js"></script>
@@ -22,7 +22,8 @@
     <script type="text/javascript" src="/scripts/app.js"></script>
     <script type="text/javascript" src="/scripts/app-long-url.js"></script>
 
-   <!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment-with-locales.min.js" /> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment-with-locales.min.js"></script>
+
     <% include partials/_header %>
   </head>
 
@@ -30,13 +31,15 @@
     <main class="container">
       <h1><%= title %></h1>
       <h2>Description: <%= description %></h2>
-      <button class="add-participant-button"> Add Participant </button>
+      <button class="btn"> Add Participant </button>
       <table class="table-slot">
         <tr>
           <th></th>
           <th>Participants</th>
           <% for (var slot of slots) { %>
-            <th> <%= slot.date %> </br> <%= slot.start_time %>-</br> <%= slot.end_time %> </th>
+            <% var month = slot.date.getMonth() + 1; %>
+            <% var day = slot.date.getDay(); %>
+            <th> <%= month, day %></br> <%= slot.start_time %>-</br> <%= slot.end_time %> </th>
           <% } %>
         </tr >
         <% for (var user_id in users) { %>

@@ -1,3 +1,5 @@
+
+
 $(() => {
   //Edit/Delete Button beside each user
 
@@ -22,6 +24,7 @@ $(() => {
   //   $('.table-slot').append( $row );
 
   // });
+// debugger;
 
   $('.add-participant-button').on('click', function (e) {
     event.preventDefault();
@@ -79,6 +82,9 @@ $(() => {
 
 $( document ).ready(function() {
     $('#long-url').val(window.location.href);
+    // debugger
+
+
 });
 
 
@@ -99,5 +105,13 @@ $( document ).ready(function() {
   });
 
   //SUBMIT to add participants/time slots to database
+
+ function getDateString() {
+  var monthNames = [ "January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December" ];
+  //return monthNames[date.getMonth()];
+  return "hi";
+  };
+
 
 });

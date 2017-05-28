@@ -5,7 +5,7 @@
 
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link rel="stylesheet" href="vendor/border-box.css" type="text/css" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="styles/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.css">
@@ -14,36 +14,63 @@
     <link rel="stylesheet" href="styles/layout.css" type="text/css" />
     <script type="text/javascript" src="vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
+    <link rel="stylesheet" href="styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="../styles/font-awesome-4.7.0/css/font-awesome.min.css">
 
-    <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
-  </head>
-  <body>
     <% include partials/_header %>
 
+  </head>
+  <body>
+
+
   <main class="container">
+    <!-- <div class="col-xs-8 col-xs-offset-2"> -->
     <section class="event-details">
 
-      <form class="event-details-form" action="#" method="POST">
-        Title:<br>
-        <input type="text" class="event-title" name="event-title" value="Enter your event title here"><br>
-        Description:<br>
-        <input type="text" class="event-description" name="event-description" value="Enter your event description here"><br>
-         Name:<br>
-        <input type="text" name="event-title" value="Enter your name here"><br>
-        Email:<br>
-        <input type="email" name="email" value="Enter your email"><br>
-        <input type="button" class="continue-button" value="Continue">
+      <form class="form-horizontal" action="#" method="POST">
+        <div class="control-group">
+          <label class="control-label">Title:</label>
+          <div class="controls">
+            <input type="text" class="event-title" id="title" value="Enter your event title here">
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label">Description:</label>
+          <div class="controls">
+            <input type="text" class="event-description" id="description" value="Enter your event description here">
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label">Name:</label>
+          <div class="controls">
+            <input type="text" class="name" id="name" value="Enter your name here">
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label">Email:</label>
+          <div class="controls">
+            <input type="email" class="email" value="Enter your email">
+          </div>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox"> Remember Password
+          </label>
+        </div>
+        <input type="submit" class="continue-button" value="Continue">
       </form>
     </section>
 
-
-
+    <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+    <script src="http://code.jquery.com/jquery.js"></script>
 
 
     <section class="date-picker" style="display:none">
-      <div class="toggle-event-details"><button type="button"> ^ </button></div>
+      <div class="toggle-event-details">
+        <button class="btn" type="button"> Previous </button>
+      </div>
       <section class="calendar-select">
 
           <div style="overflow:hidden;">
@@ -56,21 +83,21 @@
               </div>
           </div>
       </section>
-      <section class="time-slots">
+
 
     <section class="event-date-time">
         <form class="date-picker-form" action="#" method="POST">
           <input type="date" class="date-picker" name="date-picker">
-          Start Time:
-          <input type="time" class="start-time" name="start-time">
-          End Time:
-          <input type="time" class="end-time" name="end-time">
+          <label for="start-time">Start Time:</label>
+            <input type="time" class="start-time" name="start-time">
+          <label for="end-time">End Time:</label>
+            <input type="time" class="end-time" name="end-time">
           <input type="button" class="delete-date-button" style="display:none" value="x">
-          <input type="submit" class="submit-button" value="submit">
-          <input type="button" class="add-date-button" value="Add Date">
+          <input type="submit" class="btn" value="submit">
+          <input type="button" class="btn" value="Add Date">
         </form>
-      </section>
     </section>
+    <!-- </div> -->
   </main>
 <!--     <section class="owner-info">
        <form action="#" method="POST">
