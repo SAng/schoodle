@@ -74,7 +74,6 @@ router.get("/:long_url", (req, res) => {
                .insert({
                  name: req.body.name,
                  events_id: result[0].id,
-                 email: req.body.email,
                  owner: false})
                .then(function(){})
              });
@@ -114,7 +113,7 @@ router.get("/:long_url", (req, res) => {
     console.log(typeof req.body.slots);
     let promise1 = knex("users")
                     .where({'id': userId})
-                    .update({name: req.body.name, email: req.body.email})
+                    .update({name: req.body.name})
     let promise2 = knex("user_slots")
                     .where('users_id', userId)
                     .update({users_id: 0})

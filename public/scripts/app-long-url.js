@@ -1,58 +1,97 @@
-
-
 $(() => {
+  //Edit/Delete Button beside each user
 
-  //Adds participants to table
+  // //Adds participants to table
+  // $('.add-participant-button').on('click', function (e) {
+  //   event.preventDefault();
+  //   // $(this).hide();
+  //   $('.add-participant').show();
+  //   // appends another row for more participants
+  //   var $row = $("<tr>").addClass("row");
+  //   var $buttonColumn = $("<td>").addClass("button-column")
+  //   var $participantColumn = $("<td>").addClass("participant-column");
+  //   var $editParticipantBtn = $("<button> Edit </button>").addClass("edit-participant");
+  //   var $submitButton = $("<input type='submit' value='Submit'>").addClass("submit-button");
+  //   var $deleteParticipantBtn = $("<button> Delete </button>").addClass("delete-participant");
+  //   var $div = $("<div>").addClass("add-participant");
+  //   var $textBox = $("<input type='text'>").addClass("text-box");
+
+  //   $buttonColumn.append( $editParticipantBtn, $deleteParticipantBtn, $submitButton );
+  //   $participantColumn.append( $textBox );
+  //   $row.append( $buttonColumn, $participantColumn );
+  //   $('.table-slot').append( $row );
+
+  // });
+
   $('.add-participant-button').on('click', function (e) {
     event.preventDefault();
-    // appends another row for more participants
-    var $row = $("<tr>").addClass("row");
-    var $buttonColumn = $("<td>").addClass("button-column");
-    var $participantColumn = $("<td>").addClass("participant-column");
-    var $editParticipantBtn = $("<button> Edit </button>").addClass("edit-participant");
-    var $submitButton = $("<input type='submit' value='Submit'>").addClass("submit-button");
-    var $deleteParticipantBtn = $("<button> Delete </button>").addClass("delete-participant");
-    var $div = $("<div>").addClass("add-participant");
-    var $textBox = $("<input type='text'>").addClass("text-box");
-    var $td = $("<td>").addClass("check-box");
-    var $checkBoxRow = $td.append('<i class="fa fa-circle-o" aria-hidden="true">');
-
-    $buttonColumn.append( $editParticipantBtn, $deleteParticipantBtn, $submitButton );
-    $participantColumn.append( $textBox );
-    $row.append( $buttonColumn, $participantColumn, $checkBoxRow );
-    $('.table-slot').append( $row );
-
+    $.ajax({
+    type: "POST",
+    url: window.location.pathname + "/users/",
+    data: {"slots":[0],
+           "name": ""},
+    success: function() {
+        location.reload();
+    }
+    });
   });
 
-  function dateExists() {
-    if($(th)) {
-      $("<td>").addClass("check-box");
-    }
-
-  }
 
    //Deletes a row from the table
   $('.table-slot').on('click', '.delete-participant', function(e) {
     e.preventDefault();
-    $(this).closest('tr').remove();
+    $.ajax({
+    type: "POST",
+    url: window.location.pathname + "/users/" + $(this).closest('tr').find('.participant-name').attr("id") +"/delete",
+    success: function() {
+        location.reload();
+    }
+});
   });
 
-  //Makes icons clickable
+
+  $('.table-slot').on('click', '.edit-participant', function(e) {
+    e.preventDefault();
+    $(this).closest('tr').addClass('editable');
+    $(this).closest('tr').find('.participant-name').hide();
+    $(this).closest('tr').find('.text-box').show();
+    $(this).closest('tr').find('.fa').addClass('editable');
+    $('i.fa.editable').on('click', function(e) {
+      $(this).toggleClass('fa-check-circle');
+      $(this).toggleClass('fa-circle-o');
+    });
+    $(this).html('Submit');
+    $(this).on('click', function(e) {
+    var clickedSlots = [0];
+    $(this).closest('tr').find(".fa-check-circle").each(function(){ clickedSlots.push(this.title); });
+    console.log(clickedSlots)
+      $.ajax({
+    type: "POST",
+    url: window.location.pathname + "/users/" + $(this).closest('tr').find('.participant-name').attr("id"),
+    data: {"slots":clickedSlots,
+           "name": $(this).closest('tr').find('.text-box').val()},
+    success: function() {
+        location.reload();
+    }
+});
+    });
+  });
+
+$( document ).ready(function() {
+    $('#long-url').val(window.location.href);
+});
+
 
   //Copy button on long URL
 
 
-  //When clicking Edit, make participant text box be able to type
-  $('.table-slot').on('click', '.edit-participant', function(e) {
-    e.preventDefault();
-    $(this).closest('tr').find('text-box').show();
-
-
-    // $('.fa.fa-circle-o').on('click', function(e) {
-    //   $('.fa.fa-check-circle').toggle();
-    // });
-
-  });
+  // //When clicking Edit, make participant text box be able to type
+  // $('.edit-participant').on('click', function (e) {
+  //   e.preventDefault();
+  //   $('.participant-name').hide();
+  //   // $('.table-slot').find('.row').closest('.text-box').show();
+  //   $('.text-box').show();
+  // });
 
   //POST request when someone add themselves as participant
   $('.submit-button').on('click', function(e) {

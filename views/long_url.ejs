@@ -43,19 +43,19 @@
           <% var user = users[user_id] %>
           <tr class="row">
             <td class="button-column">
-              <button class="delete-participant" hidden> Delete </button>
+              <button class="delete-participant" > Delete </button>
               <button class="edit-participant"> Edit </button>
               <input type="submit" class="submit-button" value="Submit" hidden>
             </td>
             <td class="participant-column">
-              <p class="participant-name"><%= user.name %></p>
+              <p class="participant-name" id="<%=user.id%>"><%= user.name %></p>
               <input type="text" class="text-box" hidden>
             </td>
             <% for (var slot of slots) { %>
               <% if (slot.users.includes(Number(user_id))) { %>
-                <td><i class="fa fa-check-circle" aria-hidden="true"></i></td>
+                <td><i class="fa fa-check-circle" title="<%= slot.id %>" aria-hidden="true"></i></td>
               <% } else { %>
-                <td class="check-box"><i class="fa fa-circle-o" aria-hidden="true"></i></td>
+                <td><i class="fa fa-circle-o" title="<%= slot.id %>" aria-hidden="true"></i></td>
               <% } %>
             <% } %>
           </tr>
@@ -67,7 +67,7 @@
   <footer class="footer">
     <section class="long-url">
       <div class="long-url">
-        <input type="text" class="long-url" name="long-url" value="https://www.Schoodlele.com/event/long id generated">
+        <input type="text" class="long-url" id="long-url" name="long-url" value="">
       </div>
     </section>
   </footer>
