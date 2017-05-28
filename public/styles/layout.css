@@ -11,34 +11,8 @@ body {
   clear: both;
   margin: 0 auto;
   margin-top: 80px;
-  max-width: 75%s;
+  max-width: 75%;
   padding: 2em;
-}
-
-
-
-#nav-bar {
-  background-color: #3DB8B1;
-  clear: both;
-  color: #e8fdff;
-  height: 80px;
-  padding: 0 2em 0 2em;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1;
-}
-#nav-bar .logo {
-  float: left;
-  height: 80px;
-  padding-right: 10px;
-  width: 80px;
-}
-
-#nav-bar .header {
-  float: left;
-  font-size: 200%;
-  line-height: 80px;
 }
 
 #login {
@@ -63,6 +37,7 @@ body {
   margin: 20px;
   padding: 10px;
 }
+
 
 
 
