@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schoodle</title>
-
-    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-    <link rel="stylesheet" href="styles/layout.css" type="text/css" />
-    <link rel="stylesheet" href="styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="../styles/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../vendor/normalize-4.1.1.css" type="text/css" />
+    <link rel="stylesheet" href="../vendor/border-box.css" type="text/css" />
+    <link rel="stylesheet" href="../styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="../styles/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../styles/nav.css" type="text/css" />
 
-    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <script type="text/javascript" src="../vendor/jquery-3.0.0.js"></script>
+    <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script type="text/javascript" src="../vendor/jquery-3.0.0.js"></script>  <!-- Do we need 2 jquery scripts? -->
+    <script type="text/javascript" src="../scripts/bootstrap.min.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
-    <% include partials/_header %>
+    <script type="text/javascript" src="/scripts/app-long-url.js"></script>
   </head>
   <body>
-
+  <header>
+    <% include partials/_header %>
+  </header>
     <main class="container">
       <div class="col-xs-4 col-xs-offset-4">
       <section class="new-event">
@@ -22,7 +30,7 @@
         <div class="icon">
           <i class="fa fa-calendar-plus-o" aria-hidden="true"></i>
         </div>
-        <form action="/events" method="get">
+        <form action="/events" method="GET">
           <div class="create-button">
             <input type="submit" class="new-event" value="Create an Event">
           <div>
