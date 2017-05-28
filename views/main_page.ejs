@@ -1,6 +1,8 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
+<<<<<<< HEAD
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schoodle</title>
@@ -26,7 +28,6 @@
       <%- include partials/_header.ejs %>
     </header>
   <main class="container">
-    <!-- <div class="col-xs-8 col-xs-offset-2"> -->
     <section class="event-details">
       <form class="form-horizontal" action="/create-event" method="POST">
         <div class="control-group">
@@ -53,11 +54,6 @@
             <input type="email" class="email" name="email" placeholder="Enter your email here">
           </div>
         </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox"> Remember Password
-          </label>
-        </div>
         <input type="submit" class="continue-button" value="Continue">
       </form>
     </section>
@@ -65,7 +61,6 @@
       <div class="toggle-event-details">
         <button class="btn" type="button"> Previous </button>
       </div>
-
     <section class="event-date-time">
         <form class="date-picker-form" action="/add-time-slots" method="POST">
           <input type="date" class="date-picker" name="date">
@@ -79,7 +74,7 @@
           <input type="hidden" name="events_id" />
         </form>
     </section>
-    <!-- </div> -->
+
   </main>
   </body>
 </html>
