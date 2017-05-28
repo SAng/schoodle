@@ -108,12 +108,12 @@ app.post("/add-time-slots", (req, res) => {
   console.log("We are adding the date, start time and end time to the server");
 
   const dateAndTimeSlots = {
-      date: req.body.date[0, 1, 2, 3],
-      start_time: req.body.start_time[0, 1, 2, 3],
-      end_time: req.body.end_time[0, 1, 2, 3]
+      date: req.body.date[0, 1, 2],
+      start_time: req.body.start_time[0, 1, 2],
+      end_time: req.body.end_time[0, 1, 2]
     };
 
-   console.log("this is the insert ", dateAndTimeSlots);
+  console.log("this is the insert ", dateAndTimeSlots);
 
   knex.insert(dateAndTimeSlots).into("slots").then(function (id){
     console.log("We added this to the slots database, right?")
