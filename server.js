@@ -99,6 +99,7 @@ app.post("/create-event", (req, res) => {
 app.post("/add-time-slots", (req, res) => {
   console.log(req.body);
 
+// This function needs to be edited so that it inserts all times and dates into the table
   const dateAndTimeSlots = {
       date: req.body.date,
       start_time: req.body.start_time,
