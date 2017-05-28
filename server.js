@@ -45,11 +45,11 @@ app.get("/", (req, res) => {
 
 // Home page
 app.get("/events", (req, res) => {
-  res.render("create_events");
+  res.render("main_page");
 });
 
 // Event Creation (1 of 2)
-// 2 app posts. one to create event and add time slots so we don't need if/else statements to sort through data
+// 2 app posts. one to create event and add time slots
 app.post("/create-event", (req, res) => {
   console.log(req.body);
 
@@ -60,29 +60,23 @@ app.post("/create-event", (req, res) => {
   let userId = "";
   let userFound = false;
 
-  console.log("Searching database to see if user already exists...");
+  // Searching database to see if user already exists
     // get list of users (knex docs for "knex select all rows from a table")
   knex.select("*").from("users").then(function(response) {
 
-    //console.log("OBJ: " + obj);
-    //console.log("BUILDER: " + builder);
-
-    // check if the user already exists (check if req.body.name is in list)
+    // check if the user already exists
     response.forEach(function(userObj) {
       if (req.body.name === userObj.name) {
-        // if it does, save its id (from the list of users you got from the db)
+        // if it does exist save its id to the event
         userId = userObj.id;
         userFound = true;
-        console.log("This user exists already");
       }
     });
 
-    // IF it doesn't, insert it (use this function), and save its id
+    // IF it doesn't, insert it into the table, and save new id
     if (!userFound) {
       knex.insert(userData).into("users").then(function (id) {
         userId = id;
-        console.log("We are creating a new user with this id: ");
-        console.log(id);
       })
     }
 
@@ -92,32 +86,27 @@ app.post("/create-event", (req, res) => {
       // owner_id: userId
     };
 
-    console.log(eventData);
-    // write event, with the user's id
+    // insert event, with the user's id
     knex.insert(eventData).into("events").then(function (id) {
       res.render(id);
-      console.log(id);
     });
   });
 });
 
 
 // Event Creation (2 of 2). This will add time slots to database.
+// Adding the date, start time and end time to the server
 app.post("/add-time-slots", (req, res) => {
   console.log(req.body);
-  console.log("We are adding the date, start time and end time to the server");
 
   const dateAndTimeSlots = {
-      date: req.body.date[0, 1, 2],
-      start_time: req.body.start_time[0, 1, 2],
-      end_time: req.body.end_time[0, 1, 2]
+      date: req.body.date,
+      start_time: req.body.start_time,
+      end_time: req.body.end_time
     };
 
-  console.log("this is the insert ", dateAndTimeSlots);
-
   knex.insert(dateAndTimeSlots).into("slots").then(function (id){
-    console.log("We added this to the slots database, right?")
-    console.log(id);
+    console.log("Success!")
   })
 });
 
