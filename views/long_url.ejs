@@ -3,21 +3,21 @@
   <head>
     <title>Schoodle</title>
 
-    <link rel="stylesheet" href="vendor/normalize-4.1.1.css" type="text/css" />
-    <link rel="stylesheet" href="vendor/border-box.css" type="text/css" />
+    <link rel="stylesheet" href="../vendor/normalize-4.1.1.css" type="text/css" />
+    <link rel="stylesheet" href="../vendor/border-box.css" type="text/css" />
 
 
-    <link rel="stylesheet" href="styles/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../styles/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.css">
-    <link rel="stylesheet" href="vendor/normalize-4.1.1.css" type="text/css" />
-    <link rel="stylesheet" href="vendor/border-box.css" type="text/css" />
-    <link rel="stylesheet" href="styles/layout.css" type="text/css" />
-    <link rel="stylesheet" href="styles/long-url.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/font-awesome-4.7.0/css/font-awesome.min.css">
-    <script type="text/javascript" src="vendor/jquery-3.0.0.js"></script>
+    <link rel="stylesheet" href="../vendor/normalize-4.1.1.css" type="text/css" />
+    <link rel="stylesheet" href="../vendor/border-box.css" type="text/css" />
+    <link rel="stylesheet" href="../styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="../styles/long-url.css" type="text/css" />
+    <link rel="stylesheet" href="../styles/font-awesome-4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="../vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
 
-    <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../scripts/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
     <script type="text/javascript" src="/scripts/app-long-url.js"></script>
@@ -40,25 +40,26 @@
           <th></th>
           <th>Participants</th>
           <% for (var slot of slots) { %>
-            <th> <%= slot.time %> </th>
+            <th> <%= slot.date %> </br> <%= slot.start_time %>-</br> <%= slot.end_time %> </th>
           <% } %>
         </tr >
         <% for (var user_id in users) { %>
           <% var user = users[user_id] %>
           <tr class="row">
             <td class="button-column">
-              <button class="delete-participant" hidden> Delete </button>
-              <input type="submit" class="submit-button" value="Submit" hidden>
+              <button class="delete-participant" > Delete </button>
               <button class="edit-participant"> Edit </button>
+              <input type="submit" class="submit-button" value="Submit" hidden>
             </td>
             <td class="participant-column">
-              <input type="text" class="add-participant-text" value="<%= user.name %>" />
+              <p class="participant-name" id="<%=user.id%>"><%= user.name %></p>
+              <input type="text" class="text-box" hidden>
             </td>
             <% for (var slot of slots) { %>
               <% if (slot.users.includes(Number(user_id))) { %>
-                <td><i class="fa fa-check-circle" aria-hidden="true"></i></td>
+                <td><i class="fa fa-check-circle" title="<%= slot.id %>" aria-hidden="true"></i></td>
               <% } else { %>
-                <td><i class="fa fa-circle-o" aria-hidden="true"></i></td>
+                <td><i class="fa fa-circle-o" title="<%= slot.id %>" aria-hidden="true"></i></td>
               <% } %>
             <% } %>
           </tr>
@@ -70,7 +71,7 @@
   <footer class="footer">
     <section class="long-url">
       <div class="long-url">
-        <input type="text" class="long-url" name="long-url" value="https://www.Schoodlele.com/event/long id generated">
+        <input type="text" class="long-url" id="long-url" name="long-url" value="">
       </div>
     </section>
   </footer>
