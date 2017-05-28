@@ -22,37 +22,43 @@
       <%- include partials/_header.ejs %>
     </header>
   <main class="container">
-    <section class="event-details">
-      <form class="event-details-form" action="/create-event" method="POST">
+    <section class="event-details" />
+      <form class="event-details-form" action="/create-event" method="POST" />
         Title:<br>
-        <input type="text" class="event-title" name="title" placeholder="Enter your event title here"><br>
+        <input type="text" class="event-title" name="title" placeholder="Enter your event title here" /><br>
         Description:<br>
-        <input type="text" class="event-description" name="description" placeholder="Enter your event description here"><br>
+        <input type="text" class="event-description" name="description" placeholder="Enter your event description here" /><br>
          Name:<br>
-        <input type="text" name="name" placeholder="Enter your name here"><br>
+        <input type="text" name="name" placeholder="Enter your name here" /><br>
   <!--       Email:<br> -->
        <!--  <input type="email" name="email" placeholder="Enter your email"><br> -->
-        <input type="submit" class="submit-button" value="Submit">
+        <input type="submit" class="submit-button" value="Submit" />
       </form>
     </section>
 
-    <section class="date-picker" style="display:none">
-      <div class="toggle-event-details">
-        <button type="button"> toggle </button>
-      </div>
-
-      </section>
     <section class="event-date-time">
-      <form class="date-picker-form" action="/add-time-slots" method="POST">
-        <input type="date" class="date-picker" name="date">
+      <form class="date-picker-form" action="/add-time-slots" method="POST" />
+        <input type="date" class="date-picker" name="date" />
         Start Time:
-        <input type="time" class="start-time" name="start_time">
+        <input type="time" class="start-time" name="start_time" />
         End Time:
-        <input type="time" class="end-time" name="end_time">
-        <input type="button" class="delete-date-button" value="remove">
-        <input type="submit" class="submit-button" value="submit">
-        <input type="button" class="add-date-button" value="Add Date">
-        <input type="hidden" name="event_id" />
+        <input type="time" class="end-time" name="end_time" /><br>
+
+        <input type="date" class="date-picker" name="date" />
+        Start Time:
+        <input type="time" class="start-time" name="start_time" />
+        End Time:
+        <input type="time" class="end-time" name="end_time" /><br>
+
+        <input type="date" class="date-picker" name="date" />
+        Start Time:
+        <input type="time" class="start-time" name="start_time" />
+        End Time:
+        <input type="time" class="end-time" name="end_time" /><br>
+        <!-- <input type="button" class="delete-date-button" value="remove" /> -->
+        <input type="submit" class="submit-date-button" value="submit" />
+        <input type="button" class="add-date-button" value="Add Date" />
+        <input type="hidden" name="events_id" />
       </form>
     </section>
   </main>

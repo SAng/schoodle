@@ -26,11 +26,13 @@ $(() => {
     var $datePicker = $("<input type='date'>").addClass("date-picker");
     var $startTime = $("<input type='time'>").addClass("start-time");
     var $endTime = $("<input type='time'>").addClass("end-time");
-    var $deleteButton = $("<input type='button'>").addClass("delete-date-button");
+    var $deleteButton = $("<input type='button' value='remove'>").addClass("delete-date-button");
     var $form = $("<form>").addClass("date-picker-form");
+    var $submitDateAndTime = $("<input type='button' class='submit-date-button' value='submit'>")
 
-    $form.append( $datePicker, $startTime, $endTime, $deleteButton );
+    $form.append( $datePicker, $startTime, $endTime, $deleteButton, $submitDateAndTime );
     $('.event-date-time').append( $form );
+
   });
 
   //EVENT HANDLER: Toggles the event-details down and hides date picker container.

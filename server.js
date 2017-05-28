@@ -89,13 +89,14 @@ app.post("/create-event", (req, res) => {
     const eventData = {
       title: req.body.title,
       description : req.body.description,
-      owner_id: userId
+      // owner_id: userId
     };
 
     console.log(eventData);
     // write event, with the user's id
     knex.insert(eventData).into("events").then(function (id) {
       res.render(id);
+      console.log(id);
     });
   });
 });
@@ -104,7 +105,20 @@ app.post("/create-event", (req, res) => {
 // Event Creation (2 of 2). This will add time slots to database.
 app.post("/add-time-slots", (req, res) => {
   console.log(req.body);
+  console.log("We are adding the date, start time and end time to the server");
 
+  const dateAndTimeSlots = {
+      date: req.body.date[0, 1, 2, 3],
+      start_time: req.body.start_time[0, 1, 2, 3],
+      end_time: req.body.end_time[0, 1, 2, 3]
+    };
+
+   console.log("this is the insert ", dateAndTimeSlots);
+
+  knex.insert(dateAndTimeSlots).into("slots").then(function (id){
+    console.log("We added this to the slots database, right?")
+    console.log(id);
+  })
 });
 
 // Show Event
