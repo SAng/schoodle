@@ -43,10 +43,13 @@ $(() => {
     $(this).closest('form').remove();
   });
 
-  $('.submit-button').on('click', function(e) {
-    var madeSlots = [];
-     $(".event-date-time").find(".date-picker-form").each(function(){ madeSlots.push({date: this["date-picker"].val(), start_time: this.start_time, end_time: this.end_time}); });
-    console.log(madeSlots)
+  $('#submit-button').on('click', function(e) {
+    e.preventDefault();
+    var madeSlots = [{}];
+     // $(".event-date-time").find(".date-picker-form").each(function(){ madeSlots.push({date: this["date-picker"].val(), start_time: this.start_time, end_time: this.end_time}); });
+    console.log("slots", madeSlots)
+    console.log("event-title", $('#event-title').val())
+    console.log("hi")
     $.ajax({
     type: "POST",
     url: window.location.pathname,
@@ -56,8 +59,8 @@ $(() => {
       "name": $('#owner-name').val(),
       "slots": madeSlots
     },
-    success: function() {
-        location.reload();
+    success: function(data) {
+        window.location.href = data.redirect
     }
 });
   });

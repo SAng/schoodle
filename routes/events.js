@@ -55,13 +55,12 @@ router.get("/:long_url", (req, res) => {
                        .insert({
                          name: req.body.name,
                          owner: true,
-                         email: req.body.email,
                          events_id: result[0]
                        });
         Promise.all([promise2, promise3])
           .then(function(){});
       });
-      res.redirect("/events/" + longUrl);
+      res.send({redirect: "/events/" + longUrl});
   });
 
   // Add User !GOOD!

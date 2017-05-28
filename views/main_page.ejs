@@ -24,27 +24,21 @@
     <section class="event-details">
       <form class="form-horizontal" action="#" method="POST">
         <div class="control-group">
-          <label class="control-label">Title:</label>
+          <label class="control-label">Event Title:</label>
           <div class="controls">
-            <input type="text" class="event-title" id="title" value="Enter your event title here">
+            <input type="text" class="event-title" id="event-title" value="">
           </div>
         </div>
         <div class="control-group">
-          <label class="control-label">Description:</label>
+          <label class="control-label">Event Description:</label>
           <div class="controls">
-            <input type="text" class="event-description" id="description" value="">
+            <input type="text" class="event-description" id="event-description" value="">
           </div>
         </div>
         <div class="control-group">
-          <label class="control-label">Name:</label>
+          <label class="control-label">Your Name:</label>
           <div class="controls">
-            <input type="text" class="name" id="name" value="">
-          </div>
-        </div>
-        <div class="control-group">
-          <label class="control-label">Email:</label>
-          <div class="controls">
-            <input type="email" class="email" value="">
+            <input type="text" class="name" id="owner-name" value="">
           </div>
         </div>
         <input type="submit" class="continue-button" value="Continue">
@@ -75,7 +69,7 @@
           <label for="end-time">End Time:</label>
             <input type="time" class="end-time" name="end-time">
           <input type="button" class="delete-date-button" style="display:none" value="x">
-          <input type="submit" class="btn" value="submit">
+          <input type="submit" class="btn" value="submit" id="submit-button">
           <input type="button" class="btn" value="Add Date">
         </form>
     </section>
