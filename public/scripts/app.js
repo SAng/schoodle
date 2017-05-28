@@ -21,10 +21,13 @@ $(() => {
     var $datePicker = $("<input type='date'>").addClass("date-picker");
     var $startTime = $("<input type='time'>").addClass("start-time");
     var $endTime = $("<input type='time'>").addClass("end-time");
-    var $deleteButton = $("<input type='button' value='x'>").addClass("delete-date-button");
-    var $form = $("<form>").addClass("date-picker-form");
 
-    $form.append( $datePicker, $startTime, $endTime, $deleteButton );
+    var $deleteButton = $("<input type='button' value='remove'>").addClass("delete-date-button");
+
+    var $form = $("<form>").addClass("date-picker-form");
+    var $submitDateAndTime = $("<input type='button' class='submit-date-button' value='submit'>")
+
+    $form.append( $datePicker, $startTime, $endTime, $deleteButton, $submitDateAndTime );
     $('.event-date-time').append( $form );
 
   });

@@ -32,6 +32,28 @@ h1 {
   background-color: white;
 }
 
+/* EVENT CREATION FORM */
+.event-title {
+  padding: 1%;
+  width: 30%;
+}
+
+.event-description {
+  padding: 1%;
+  width: 30%;
+}
+
+.owner-name,
+.owner-email {
+  padding: 1%;
+  width: 30%;
+}
+
+.submit-button {
+  margin: 5%;
+  padding: 2%;
+}
+
 .event-date-time {
   padding: 20px;
 }
@@ -73,8 +95,6 @@ input.date-picker {
 .form-horizontal {
   text-align: center;
 }
-
-
 
 
 
