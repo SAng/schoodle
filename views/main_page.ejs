@@ -22,10 +22,13 @@
  -->
   </head>
   <body>
+    <header>
+      <%- include partials/_header.ejs %>
+    </header>
   <main class="container">
     <!-- <div class="col-xs-8 col-xs-offset-2"> -->
     <section class="event-details">
-      <form class="form-horizontal" action="/events" method="POST">
+      <form class="form-horizontal" action="/create-event" method="POST">
         <div class="control-group">
           <label class="control-label">Title:</label>
           <div class="controls">
@@ -64,7 +67,7 @@
       </div>
 
     <section class="event-date-time">
-        <form class="date-picker-form" action="/events" method="POST">
+        <form class="date-picker-form" action="/add-time-slots" method="POST">
           <input type="date" class="date-picker" name="date">
           <label for="start-time">Start Time:</label>
           <input type="time" class="start-time" name="start_time">
@@ -73,10 +76,10 @@
           <input type="button" class="delete-date-button" style="display:none" value="x">
           <input type="submit" class="btn" value="submit">
           <input type="button" class="btn" value="Add Date">
+          <input type="hidden" name="events_id" />
         </form>
     </section>
     <!-- </div> -->
   </main>
-
   </body>
 </html>
