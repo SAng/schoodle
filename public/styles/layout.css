@@ -16,6 +16,19 @@ body {
   border-radius: 20px;
 }
 
+.event-title,
+.event-description,
+.name {
+  width: 30%;
+  min-height: 50px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.control-label {
+  font-size: medium;
+  color: grey;
+}
 .container {
   background-color: #ffffff;
   clear: both;
@@ -47,7 +60,7 @@ h1 {
 }
 
 .date-picker {
-  padding: 20px;
+  padding: 30px;
 }
 
 .start-time,
@@ -60,7 +73,7 @@ h1 {
 }
 
 .start-time {
-  margin-right: 67px;
+  margin-right: 101px;
 }
 
 .icon {
@@ -87,8 +100,9 @@ input.date-picker {
   border-style: solid;
   font-size: medium;
   padding: 6px;
-  margin-right: 54px;
-  margin-bottom: 15px
+  margin-right: 98px;
+  margin-left: 29px;
+  margin-bottom: 15px;
 }
 
 .form-horizontal {
@@ -113,8 +127,3 @@ th {
 btn.submit-date {
   margin: 16px;
 }
-
-
-
-
-

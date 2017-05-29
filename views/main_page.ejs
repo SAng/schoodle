@@ -1,25 +1,28 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schoodle</title>
-    <link rel="stylesheet" href="../styles/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" href="../vendor/normalize-4.1.1.css" type="text/css" />
-    <link rel="stylesheet" href="../vendor/border-box.css" type="text/css" />
-    <link rel="stylesheet" href="../styles/layout.css" type="text/css" />
-    <link rel="stylesheet" href="../styles/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../styles/nav.css" type="text/css" />
 
-    <script type="text/javascript" src="../vendor/jquery-3.0.0.js"></script>
+    <link rel="stylesheet" href="styles/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.css">
+    <link rel="stylesheet" href="vendor/normalize-4.1.1.css" type="text/css" />
+    <link rel="stylesheet" href="vendor/border-box.css" type="text/css" />
+    <link rel="stylesheet" href="styles/layout.css" type="text/css" />
+    <link href="toastr.css" rel="stylesheet"/>
+    <script type="text/javascript" src="vendor/jquery-3.0.0.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
+
+    <link rel="stylesheet" href="styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="../styles/font-awesome-4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
     <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
     <script src="http://code.jquery.com/jquery.js"></script>
-    <script type="text/javascript" src="../vendor/jquery-3.0.0.js"></script>
-    <script type="text/javascript" src="../scripts/bootstrap.min.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
     <script type="text/javascript" src="/scripts/app-long-url.js"></script>
+
+    <title>Schoodle</title>
 
   </head>
   <body>
@@ -28,46 +31,43 @@
     </header>
   <main class="container">
     <section class="event-details">
-
     <h1>Step 1 of 2</h1>
-      <form class="form-horizontal" action="/events/:long_url" method="POST">
+
+      <form class="form-horizontal" action="#" method="POST">
         <div class="control-group">
-          <label class="control-label">Title:</label>
+          <label class="control-label">Event Title:</label>
           <div class="controls">
-            <input type="text" class="event-title" name="title" placeholder="Enter your event title here">
+            <input type="text" class="event-title" id="event-title" value="" placeholder="Enter your event title here">
           </div>
         </div>
         <div class="control-group">
-          <label class="control-label">Description:</label>
+          <label class="control-label">Event Description:</label>
           <div class="controls">
-            <input type="text" class="event-description" name="description" placeholder="Enter your event description here">
+
+            <input type="text" class="event-description" id="event-description" value="" placeholder="Enter your event description here">
+
           </div>
         </div>
         <div class="control-group">
-          <label class="control-label">Name:</label>
+          <label class="control-label">Your Name:</label>
           <div class="controls">
-            <input type="text" class="name" name="name" placeholder="Enter your name here">
+            <input type="text" class="name" id="owner-name" value="" placeholder="Enter your name here">
           </div>
         </div>
-        <div class="control-group">
-          <label class="control-label">Email:</label>
-          <div class="controls">
-            <input type="email" class="email" name="email" placeholder="Enter your email here">
-          </div>
-        </div>
-        <input type="submit" class="btn" id="continue-button" value="Continue">
+
+        <input type="submit" class="btn continue-button" id="continue-button" value="Continue">
+
       </form>
     </section>
-
     <section class="date-picker" style="display:none">
       <div class="toggle-event-details">
 
         <button class="btn" type="button"> Previous </button>
 
       </div>
-
     <section class="event-date-time">
-      <input type="button" class="add-date-btn btn" value="Add Date">
+
+        <input type="button" class="add-date-btn btn" value="Add Date">
         <h1>Step 2 of 2</h1>
         <div class="titles">
           <table class="table">
@@ -80,23 +80,14 @@
           </table>
         </div>
 
-        <form class="date-picker-form" action="/events/:long_url" method="POST">
-          <!-- <input type="date" class="date-picker" name="date">
-          <label for="start-time">Start Time:</label>
-          <input type="time" class="start-time" name="start_time">
-          <label for="end-time">End Time:</label>
-          <input type="time" class="end-time" name="end_time">
-          <input type="button" class="delete-date-button" style="display:none" value="x">
-          <input type="submit" class="btn" value="submit">
-          <input type="button" class="btn" value="Add Date">
-          <input type="hidden" name="events_id" /> -->
-        </form>
     </section>
 
       </br>
       <div>
-        <input type="submit" class="btn submit-date" value="submit">
+        <input type="submit" class="btn submit-date" id="submit-button" value="submit">
       </div>
+
+
   </main>
   </body>
 </html>
