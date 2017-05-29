@@ -1,6 +1,6 @@
 
 .long-url {
-  padding: 20px;
+  padding: 37px;
 }
 
 h1 {
@@ -11,8 +11,9 @@ h1 {
   margin: auto;
 }
 
-th {
+.table-slot th {
   padding: 10px;
+  font-size: large;
 }
 
 td {
@@ -38,10 +39,26 @@ td {
   padding: 18px;
 }
 
-.long-url {
-  width: 97%;
+#long-url {
+  width: 95%;
   text-align: center;
   font-size: x-large;
   padding: 7px;
+  border-radius: 10px;
+}
+
+p {
+  text-align: center;
+  color: grey;
+  font-size: large;
+}
+
+.fa.fa-clipboard {
+  font-size: 21px;
+  margin-left: 13px;
+}
+
+.delete-participant {
+  margin-left: 20px;
 }
 

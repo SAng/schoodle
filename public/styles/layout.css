@@ -50,7 +50,7 @@ h1 {
 }
 
 .start-time {
-  margin-right: 50px;
+  margin-right: 67px;
 }
 
 .icon {
@@ -78,6 +78,7 @@ input.date-picker {
   font-size: medium;
   padding: 6px;
   margin-right: 54px;
+  margin-bottom: 15px
 }
 
 .form-horizontal {
@@ -92,7 +93,16 @@ th {
   color: grey;
 }
 
+.add-date-btn {
+  margin-right: -19px;
+  padding: 9px;
+  margin-top: 12px;
+  float: left;
+}
 
+btn.submit-date {
+  margin: 16px;
+}
 
 
 

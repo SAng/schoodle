@@ -12,14 +12,14 @@ $(() => {
 
   //EVENT HANDLER: Click Add date button to add new date and will append
   //date picker.
-  $('#add-date-btn').on('click', function(e) {
+  $('.add-date-btn').on('click', function(e) {
     e.preventDefault();
     var $datePicker = $("<input type='date'>").addClass("date-picker");
     var $labelStartTime = $("<label>").addClass("start-time-label");
     var $startTime = $("<input type='time'>").addClass("start-time");
     var $labelEndTime = $("<label>").addClass("end-time-label");
     var $endTime = $("<input type='time'>").addClass("end-time");
-    var $deleteButton = $("<input type='button'>").addClass("delete-date-button");
+    var $deleteButton = $("<input type='button' value='Delete'>").addClass("btn");
     var $form = $("<form>").addClass("date-picker-form");
 
     $form.append( $datePicker, $labelStartTime, $startTime, $labelEndTime, $endTime, $deleteButton );

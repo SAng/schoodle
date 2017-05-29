@@ -68,7 +68,9 @@
 
     <section class="date-picker" style="display:none">
       <div class="toggle-event-details">
+
         <button class="btn" type="button"> Previous </button>
+
       </div>
       <section class="calendar-select">
 
@@ -85,6 +87,7 @@
 
 
     <section class="event-date-time">
+        <input type="button" class="add-date-btn btn" value="Add Date">
         <h1>Step 2 of 2</h1>
         <div class="titles">
           <table class="table">
@@ -92,23 +95,19 @@
               <th>Date:</th>
               <th>Start Time:</th>
               <th>End Time:</th>
-              <th><input type="button" id="add-date-btn" class="btn" value="Add Date"></th>
+              <th></th>
             </tr>
           </table>
         </div>
         <form class="date-picker-form" action="#" method="POST">
-          <div class="date-container1">
-            <input type="date" class="date-picker" name="date-picker">
-            <!-- <label class="start-time-label" for="start-time">Start Time:</label> -->
-            <input type="time" class="start-time" name="start-time">
-            <!-- <label class="end-time-label" for="end-time">End Time:</label> -->
-            <input type="time" class="end-time" name="end-time">
 
-            <input type="button" id="delete-date-button" class="btn" style="display:none" value="x">
-          </div>
         </form>
-        <input type="submit" class="btn" value="submit">
+
     </section>
+      </br>
+      <div>
+        <input type="submit" class="btn submit-date" value="submit">
+      </div>
 
   </main>
 <!--     <section class="owner-info">

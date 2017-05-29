@@ -89,15 +89,16 @@ $( document ).ready(function() {
 
 
   //Copy button on long URL
-
-
-  // //When clicking Edit, make participant text box be able to type
-  // $('.edit-participant').on('click', function (e) {
-  //   e.preventDefault();
-  //   $('.participant-name').hide();
-  //   // $('.table-slot').find('.row').closest('.text-box').show();
-  //   $('.text-box').show();
-  // });
+  $('.fa.fa-clipboard').on('click', function(e) {
+    e.preventDefault();
+    function copyToClipboard(element) {
+      var $temp = $("<input>");
+      $("body").append($temp);
+      $temp.val($(element).text()).select();
+      document.execCommand("copy");
+      $temp.remove();
+    }
+  });
 
   //POST request when someone add themselves as participant
   $('.submit-button').on('click', function(e) {
