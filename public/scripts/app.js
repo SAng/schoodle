@@ -49,23 +49,44 @@ $(() => {
   $('#submit-button').on('click', function(e) {
     e.preventDefault();
     var madeSlots = [{}];
-     // $(".event-date-time").find(".date-picker-form").each(function(){ madeSlots.push({date: this["date-picker"].val(), start_time: this.start_time, end_time: this.end_time}); });
-    console.log("slots", madeSlots)
-    console.log("event-title", $('#event-title').val())
-    console.log("hi")
-    $.ajax({
-    type: "POST",
-    url: window.location.pathname,
-    data: {
-      "title": $('#event-title').val(),
-      "description": $('#event-description').val(),
-      "name": $('#owner-name').val(),
-      "slots": madeSlots
-    },
-    success: function(data) {
-        window.location.href = data.redirect
+    var validSlots = true;
+
+    $(".date-picker-form").each(function () {
+        if (validSlots === true) {
+          var date = ($(this).find(".date-picker").val());
+          var start_time = ($(this).find(".start-time").val());
+          var end_time = ($(this).find(".end-time").val());
+          validSlots = (date && start_time && end_time)
+        } else {
+          return;
+        }
+      });
+
+    if (!validSlots)
+      {alert('Slot fields filled in incorrectly. Ples fix ^.^')}
+    else {
+      $(".date-picker-form").each(function () {
+          var currentSlot = {};
+          currentSlot.date = ($(this).find(".date-picker").val());
+          currentSlot.start_time = ($(this).find(".start-time").val());
+          currentSlot.end_time = ($(this).find(".end-time").val());
+          madeSlots.push(currentSlot);
+      })
+      $.ajax({
+        type: "POST",
+        url: window.location.pathname,
+        data: {
+          "title": $('#event-title').val(),
+          "description": $('#event-description').val(),
+          "name": $('#owner-name').val(),
+          "slots": madeSlots
+        },
+        success: function(data) {
+            window.location.href = data.redirect
+        }
+      })
     }
-});
+
   });
 
 });

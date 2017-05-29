@@ -1,0 +1,97 @@
+body {
+  background-color: #eee;
+}
+
+body h1 {
+  color: #244751;
+}
+
+.container {
+  background-color: #ffffff;
+  clear: both;
+  margin: 0 auto;
+  margin-top: 105px;
+  max-width: 70%;
+  padding: 2em;
+  border-radius: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: grey;
+}
+
+.create-button {
+  text-align: center;
+}
+
+.new-event {
+  margin: 30px;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+/* EVENT CREATION FORM */
+.event-title {
+  padding: 1%;
+  width: 30%;
+}
+
+.event-description {
+  padding: 1%;
+  width: 30%;
+}
+
+.owner-name,
+.owner-email {
+  padding: 1%;
+  width: 30%;
+}
+
+.submit-button {
+  margin: 5%;
+  padding: 2%;
+}
+
+.event-date-time {
+  padding: 20px;
+}
+
+.date-picker {
+  padding: 20px;
+}
+
+.start-time,
+.end-time {
+  /*margin: 20px;
+  padding: 10px;*/
+  font-size: x-large;
+  border-radius: 12px;
+  border-style: outset;
+  border-width: thick;
+}
+
+.icon {
+  text-align: center;
+}
+
+.fa.fa-calendar-plus-o {
+  font-size: 230px;
+  color: grey;
+}
+
+.btn {
+  float: right;
+}
+
+input.date-picker {
+  border-radius: 20px;
+  border-style: dashed;
+  font-size: medium;
+  padding: 7px;
+}
+
+.form-horizontal {
+  text-align: center;
+}
