@@ -1,15 +1,14 @@
 # Schoodle Project
 
-Schoodle is a simple Doodle clone.
+Schoodle is a simple Doodle clone. Use Schoodle to find a convenient time to for a group to meet.
 
 Schoodle is built with HTML, CSS, Bootstrap, JS, jQuery, Ajax on the client-side and Node, Express and Knex on the server-side.
 
 ## Final Product
 
-![""]()
-![""]()
-![""]()
-![""]()
+!["Home Page for Schoodle"]()
+!["Create an Event (Step 1 of 2_"]()
+!["Event Details Filled In"]()
 
 ## Getting Started
 
