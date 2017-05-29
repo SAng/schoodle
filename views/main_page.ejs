@@ -30,7 +30,7 @@
     <section class="event-details">
 
     <h1>Step 1 of 2</h1>
-      <form class="form-horizontal" action="/create-event" method="POST">
+      <form class="form-horizontal" action="/events/:long_url" method="POST">
         <div class="control-group">
           <label class="control-label">Title:</label>
           <div class="controls">
@@ -80,7 +80,7 @@
           </table>
         </div>
 
-        <form class="date-picker-form" action="/add-time-slots" method="POST">
+        <form class="date-picker-form" action="/events/:long_url" method="POST">
           <!-- <input type="date" class="date-picker" name="date">
           <label for="start-time">Start Time:</label>
           <input type="time" class="start-time" name="start_time">
