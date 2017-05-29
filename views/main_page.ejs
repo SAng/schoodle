@@ -1,12 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <title>Schoodle</title>
-
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link rel="stylesheet" href="vendor/border-box.css" type="text/css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="styles/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.css">
     <link rel="stylesheet" href="vendor/normalize-4.1.1.css" type="text/css" />
@@ -16,62 +15,47 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
     <link rel="stylesheet" href="styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="../styles/font-awesome-4.7.0/css/font-awesome.min.css">
-
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
     <% include partials/_header %>
-
   </head>
   <body>
-
-
   <main class="container">
     <section class="event-details">
+
     <h1>Step 1 of 2</h1>
+
       <form class="form-horizontal" action="#" method="POST">
         <div class="control-group">
-          <label class="control-label">Title:</label>
+          <label class="control-label">Event Title:</label>
           <div class="controls">
-            <input type="text" class="event-title" id="title" value="Enter your event title here">
+            <input type="text" class="event-title" id="event-title" value="">
           </div>
         </div>
         <div class="control-group">
-          <label class="control-label">Description:</label>
+          <label class="control-label">Event Description:</label>
           <div class="controls">
-            <input type="text" class="event-description" id="description" value="Enter your event description here">
+            <input type="text" class="event-description" id="event-description" value="">
           </div>
         </div>
         <div class="control-group">
-          <label class="control-label">Name:</label>
+          <label class="control-label">Your Name:</label>
           <div class="controls">
-            <input type="text" class="name" id="name" value="Enter your name here">
+            <input type="text" class="name" id="owner-name" value="">
           </div>
         </div>
-        <div class="control-group">
-          <label class="control-label">Email:</label>
-          <div class="controls">
-            <input type="email" class="email" value="Enter your email">
-          </div>
-        </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox"> Remember Password
-          </label>
-        </div>
-        <input type="submit" class="btn" id="continue-button" value="Continue">
+
+        <input type="submit" class="btn continue-button" id="continue-button" value="Continue">
+
       </form>
     </section>
-
     <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
     <script src="http://code.jquery.com/jquery.js"></script>
-
-
     <section class="date-picker" style="display:none">
       <div class="toggle-event-details">
         <button class="btn" type="button"> Previous </button>
       </div>
       <section class="calendar-select">
-
           <div style="overflow:hidden;">
               <div class="form-group">
                   <div class="row">
@@ -82,8 +66,6 @@
               </div>
           </div>
       </section>
-
-
     <section class="event-date-time">
         <h1>Step 2 of 2</h1>
         <div class="titles">
@@ -104,10 +86,12 @@
             <!-- <label class="end-time-label" for="end-time">End Time:</label> -->
             <input type="time" class="end-time" name="end-time">
 
+
             <input type="button" id="delete-date-button" class="btn" style="display:none" value="x">
           </div>
+
         </form>
-        <input type="submit" class="btn" value="submit">
+        <input type="submit" class="btn submit-date-button" value="submit">
     </section>
 
   </main>

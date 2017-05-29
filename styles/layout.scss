@@ -1,9 +1,9 @@
 body {
   background-color: #eee;
-}
 
-body h1 {
-  color: #244751;
+  h1 {
+    color: #244751;
+  }
 }
 
 .container {
@@ -63,7 +63,7 @@ h1 {
 }
 
 .start-time,
-.end-time {
+.end-time     {
   /*margin: 20px;
   padding: 10px;*/
   font-size: x-large;
@@ -77,8 +77,8 @@ h1 {
 }
 
 .fa.fa-calendar-plus-o {
-  font-size: 230px;
-  color: grey;
+    font-size: 230px;
+    color: grey;
 }
 
 .btn {
@@ -95,3 +95,6 @@ input.date-picker {
 .form-horizontal {
   text-align: center;
 }
+
+
+

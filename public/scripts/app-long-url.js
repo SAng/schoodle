@@ -26,7 +26,7 @@ $(() => {
   // });
 // debugger;
 
-  $('.add-participant-button').on('click', function (e) {
+  $('#add-participant').on('click', function (e) {
     event.preventDefault();
     $.ajax({
     type: "POST",
