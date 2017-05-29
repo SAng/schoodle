@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-
-    <link rel="stylesheet" href="../vendor/normalize-4.1.1.css" type="text/css" />
-    <link rel="stylesheet" href="../vendor/border-box.css" type="text/css" />
-
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schoodle</title>
     <link rel="stylesheet" href="../styles/bootstrap.min.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.css">
     <link rel="stylesheet" href="../vendor/normalize-4.1.1.css" type="text/css" />
     <link rel="stylesheet" href="../vendor/border-box.css" type="text/css" />
     <link rel="stylesheet" href="../styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="../styles/long-url.css" type="text/css" />
     <link rel="stylesheet" href="../styles/font-awesome-4.7.0/css/font-awesome.min.css">
+
     <script type="text/javascript" src="../vendor/jquery-3.0.0.js"></script>
+
     <link rel="stylesheet" href="../styles/nav.css" type="text/css" />
 
+    <script type="text/javascript" src="../vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="../scripts/bootstrap.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
     <script type="text/javascript" src="/scripts/app-long-url.js"></script>
+
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     <script>moment().format(); </script>
@@ -27,7 +27,11 @@
     <% include partials/_header %>
   </head>
 
+
   <body>
+    <header>
+      <%- include partials/_header.ejs %>
+    </header>
     <main class="container">
 
       <button class="btn" id="add-participant"> Add Participant </button></br>
@@ -36,6 +40,7 @@
 
       <table class="table-slot">
         <tr>
+        <!-- Do we need the element tags on the line below? -->
           <th></th>
           <th>Participants</th>
           <% for (var slot of slots) { %>
@@ -81,5 +86,7 @@
     </main>
 
   </body>
+
+
 
 </html>

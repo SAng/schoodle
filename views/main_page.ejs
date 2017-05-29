@@ -2,10 +2,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Schoodle</title>
-    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-    <link rel="stylesheet" href="vendor/border-box.css" type="text/css" />
+<<<<<<< HEAD
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <link rel="stylesheet" href="styles/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.css">
     <link rel="stylesheet" href="vendor/normalize-4.1.1.css" type="text/css" />
@@ -19,12 +19,33 @@
     <link rel="stylesheet" href="../styles/font-awesome-4.7.0/css/font-awesome.min.css">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
     <script type="text/javascript" src="bootbox.min.js"></script>
+=======
+    <title>Schoodle</title>
+    <link rel="stylesheet" href="../styles/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../vendor/normalize-4.1.1.css" type="text/css" />
+    <link rel="stylesheet" href="../vendor/border-box.css" type="text/css" />
+    <link rel="stylesheet" href="../styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="../styles/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../styles/nav.css" type="text/css" />
+
+    <script type="text/javascript" src="../vendor/jquery-3.0.0.js"></script>
+    <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script type="text/javascript" src="../vendor/jquery-3.0.0.js"></script>  <!-- Do we need 2 jquery scripts? -->
+    <script type="text/javascript" src="../scripts/bootstrap.min.js"></script>
+>>>>>>> 57857ac4a982aca5f0b9523b6cbdd0be6dfc4a58
     <script type="text/javascript" src="/scripts/app.js"></script>
-    <% include partials/_header %>
+    <script type="text/javascript" src="/scripts/app-long-url.js"></script>
+<!--     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
+ -->
   </head>
   <body>
+    <header>
+      <%- include partials/_header.ejs %>
+    </header>
   <main class="container">
     <section class="event-details">
+
 
     <h1>Step 1 of 2</h1>
 
@@ -32,19 +53,24 @@
         <div class="control-group">
           <label class="control-label">Event Title:</label>
           <div class="controls">
-            <input type="text" class="event-title" id="event-title" value="">
+            <input type="text" class="event-title" id="event-title" value="" placeholder="Enter your event title here">
+
           </div>
         </div>
         <div class="control-group">
           <label class="control-label">Event Description:</label>
           <div class="controls">
-            <input type="text" class="event-description" id="event-description" value="">
+
+            <input type="text" class="event-description" id="event-description" value="" placeholder="Enter your event description here">
+
           </div>
         </div>
         <div class="control-group">
           <label class="control-label">Your Name:</label>
           <div class="controls">
-            <input type="text" class="name" id="owner-name" value="">
+
+            <input type="text" class="name" id="owner-name" value="" placeholder="Enter your name here">
+
           </div>
         </div>
 
@@ -52,26 +78,14 @@
 
       </form>
     </section>
-    <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
-    <script src="http://code.jquery.com/jquery.js"></script>
     <section class="date-picker" style="display:none">
       <div class="toggle-event-details">
 
         <button class="btn" type="button"> Previous </button>
 
       </div>
-      <section class="calendar-select">
-          <div style="overflow:hidden;">
-              <div class="form-group">
-                  <div class="row">
-                      <div class="col-md-8">
-                          <div id="datetimepicker12"></div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </section>
     <section class="event-date-time">
+
         <input type="button" class="add-date-btn btn" value="Add Date">
         <h1>Step 2 of 2</h1>
         <div class="titles">
@@ -86,6 +100,7 @@
         </div>
 
 
+
     </section>
 
       </br>
@@ -95,14 +110,5 @@
 
 
   </main>
-<!--     <section class="owner-info">
-       <form action="#" method="POST">
-        Name:<br>
-        <input type="text" name="event-title" value="Enter your name here"><br>
-        Email:<br>
-        <input type="email" name="email" value="Enter your email"><br>
-        <input type="submit" class="submit-button" value="Continue">
-      </form>
-    </section> -->
   </body>
 </html>
