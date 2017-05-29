@@ -1,35 +1,34 @@
-# Node Skeleton
+# Schoodle Project
 
-## Project Setup
+Schoodle is a simple Doodle clone.
 
-1. Create your own empty repo on GitHub
-2. Clone this repository (do not fork)
-  - Suggestion: When cloning, specify a different folder name that is relevant to your project
-3. Remove the git remote: `git remote rm origin`
-4. Add a remote for your origin: `git remote add origin <your github repo URL>`
-5. Push to the new origin: `git push -u origin master`
-6. Verify that the skeleton code now shows up in your repo on GitHub
+Schoodle is built with HTML, CSS, Bootstrap, JS, jQuery, Ajax on the client-side and Node, Express and Knex on the server-side.
+
+## Final Product
+
+![""]()
+![""]()
+![""]()
+![""]()
 
 ## Getting Started
 
-1. Create the `.env` by using `.env.example` as a reference: `cp .env.example .env`
-2. Update the .env file with your correct local information
-3. Install dependencies: `npm i`
-4. Fix to binaries for sass: `npm rebuild node-sass`
-5. Run migrations: `npm run knex migrate:latest`
-  - Check the migrations folder to see what gets created in the DB
-6. Run the seed: `npm run knex seed:run`
-  - Check the seeds file to see what gets seeded in the DB
-7. Run the server: `npm run local`
-8. Visit `http://localhost:8080/`
+1. Fork this repository, then clone your fork of this repository.
+2. Install dependencies using the `npm install` command.
+3. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
+4. Go to <http://localhost:8080/> in your browser.
 
 ## Dependencies
 
-- Node 5.10.x or above
-- NPM 3.8.x or above
-
-## Commit Test
-1. Item 1
-2. Item 2
-3. Good things come in three.
+- Body-Parser
+- Dotenv
+- EJS
+- Express
+- Knex
+- Knex-logger
+- Morgan
+- Node-sass-middleware
+- Nodemon
+- Node
+- PG
 
