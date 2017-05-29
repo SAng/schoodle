@@ -5,12 +5,12 @@ $(() => {
   //eventdetails container will toggle up.
   $('#continue-button').on('click', function(e) {
     e.preventDefault();
-    if( $('#event-title').val() && $('#event-description').val() && $('#owner-name').val()) {
+    if( $('.event-title').val() && $('.event-description').val() && $('.name').val()) {
       $('.event-details').slideToggle("fast", function() {
       });
       $('.date-picker').show();
     } else {
-      alert('Plese fill all forms in ples ^_^')
+      alert('Plese fill all forms in ples ^_^');
     }
   });
 
