@@ -29,9 +29,11 @@
 
   <body>
     <main class="container">
-      <h1><%= title %></h1>
-      <h2>Description: <%= description %></h2>
-      <button class="btn" id="add-participant"> Add Participant </button>
+
+      <button class="btn" id="add-participant"> Add Participant </button></br>
+      <h1><%= title %></h1></br>
+      <p class="muted">Description: <%= description %></p></br>
+
       <table class="table-slot">
         <tr>
           <th></th>
@@ -39,15 +41,16 @@
           <% for (var slot of slots) { %>
             <% var month = slot.date.getMonth() + 1; %>
             <% var day = slot.date.getDay(); %>
-            <th> <%= month, day %></br> <%= slot.start_time %>-</br> <%= slot.end_time %> </th>
+            <% var year = slot.date.getYear(); %>
+            <th> <%= month + ' ' %><%= day %><%= year %></br> <%= slot.start_time %>-</br> <%= slot.end_time %> </th>
           <% } %>
         </tr >
         <% for (var user_id in users) { %>
           <% var user = users[user_id] %>
           <tr class="row">
             <td class="button-column">
-              <button class="delete-participant" > Delete </button>
-              <button class="edit-participant"> Edit </button>
+              <button class="delete-participant btn" > Delete </button>
+              <button class="edit-participant btn"> Edit </button>
               <input type="submit" class="submit-button" value="Submit" hidden>
             </td>
             <td class="participant-column">
@@ -65,13 +68,17 @@
         <% } %>
       </table>
     </main>
+
+    <main class="container">
+      <h1>Share the Event</h1>
+      <section class="long-url">
+        <div class="long-url">
+          <input type="text" class="long-url" id="long-url" name="long-url" value="">
+          <i class="fa fa-clipboard" aria-hidden="true"></i>
+        </div>
+      </section>
+    </main>
+
   </body>
 
-  <footer class="footer">
-    <section class="long-url">
-      <div class="long-url">
-        <input type="text" class="long-url" id="long-url" name="long-url" value="">
-      </div>
-    </section>
-  </footer>
 </html>

@@ -3,7 +3,7 @@ $(() => {
   //EVENT HANDLER:
   //When clicking the submit button after filling out 'Event Details' page,
   //eventdetails container will toggle up.
-  $('.continue-button').on('click', function(e) {
+  $('#continue-button').on('click', function(e) {
     e.preventDefault();
     if( $('#event-title').val() && $('#event-description').val() && $('#owner-name').val()) {
       $('.event-details').slideToggle("fast", function() {
@@ -16,18 +16,20 @@ $(() => {
 
   //EVENT HANDLER: Click Add date button to add new date and will append
   //date picker.
-  $('.add-date-button').on('click', function(e) {
+  $('.add-date-btn').on('click', function(e) {
     e.preventDefault();
     var $datePicker = $("<input type='date'>").addClass("date-picker");
+    var $labelStartTime = $("<label>").addClass("start-time-label");
     var $startTime = $("<input type='time'>").addClass("start-time");
+    var $labelEndTime = $("<label>").addClass("end-time-label");
     var $endTime = $("<input type='time'>").addClass("end-time");
 
-    var $deleteButton = $("<input type='button' value='remove'>").addClass("delete-date-button");
-
+    var $deleteButton = $("<input type='button' value='Delete'>").addClass("btn");
     var $form = $("<form>").addClass("date-picker-form");
 
+    $form.append( $datePicker, $labelStartTime, $startTime, $labelEndTime, $endTime, $deleteButton );
 
-    $form.append( $datePicker, $startTime, $endTime, $deleteButton);
+
     $('.event-date-time').append( $form );
 
   });
@@ -41,7 +43,7 @@ $(() => {
   });
 
   //EVENT HANDLER: Deletes dates
-  $('.event-date-time').on('click', '.delete-date-button', function(e) {
+  $('.event-date-time').on('click', '#delete-date-button', function(e) {
     e.preventDefault();
     $(this).closest('form').remove();
   });
