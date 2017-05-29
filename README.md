@@ -6,9 +6,9 @@ Schoodle is built with HTML, CSS, Bootstrap, JS, jQuery, Ajax on the client-side
 
 ## Final Product
 
-!["Home Page for Schoodle"]()
-!["Create an Event (Step 1 of 2_"]()
-!["Event Details Filled In"]()
+!["Home Page"](https://github.com/boomerandzapper/schoodle/blob/master/docs/index.png?raw=true)
+!["Fill in Event Details"](https://github.com/boomerandzapper/schoodle/blob/master/docs/longurl.png?raw=true)
+!["Choose your availability"](https://github.com/boomerandzapper/schoodle/blob/master/docs/mainpage.png?raw=true)
 
 ## Getting Started
 
@@ -30,4 +30,3 @@ Schoodle is built with HTML, CSS, Bootstrap, JS, jQuery, Ajax on the client-side
 - Nodemon
 - Node
 - PG
-
