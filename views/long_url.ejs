@@ -22,7 +22,8 @@
     <script type="text/javascript" src="/scripts/app.js"></script>
     <script type="text/javascript" src="/scripts/app-long-url.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment-with-locales.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script>moment().format(); </script>
 
     <% include partials/_header %>
   </head>
@@ -37,10 +38,11 @@
           <th></th>
           <th>Participants</th>
           <% for (var slot of slots) { %>
-            <% var month = slot.date.getMonth() + 1; %>
-            <% var day = slot.date.getDay(); %>
-            <% var year = slot.date.getYear(); %>
-            <th> <%= month + ' ' %><%= day %><%= year %></br> <%= slot.start_time %>-</br> <%= slot.end_time %> </th>
+
+            <th> <%= moment(slot.date).format("ll") %> </br>
+            <%= moment(moment(slot.date).format("ll") + ' ' + slot.start_time).format("LT") %> - </br>
+            <%= moment(moment(slot.date).format("ll") + ' ' + slot.end_time).format("LT") %>
+             </th>
           <% } %>
         </tr >
         <% for (var user_id in users) { %>

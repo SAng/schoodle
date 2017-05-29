@@ -4,6 +4,8 @@ const express = require('express');
 const router  = express.Router();
 const urlGenerator = require("../public/scripts/random_string_generator");
 const organize_data = require("../public/scripts/organize_data");
+const moment = require('moment');
+
 
 module.exports = (knex) => {
 
@@ -31,7 +33,9 @@ router.get("/:long_url", (req, res) => {
                     .where({long_url: param});
     Promise.all([promise1, promise2, promise3])
     .then( ([eventData, slotData, userData]) => {
-      res.render("long_url", organize_data(eventData, slotData, userData));
+      let templateVars = organize_data(eventData, slotData, userData)
+      templateVars['moment'] = moment
+      res.render("long_url", templateVars);
     });
   });
 
