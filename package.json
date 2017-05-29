@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.15.2",
+    "bootbox": "^4.4.0",
     "dotenv": "^2.0.0",
     "ejs": "^2.4.1",
     "express": "^4.13.4",
@@ -22,7 +23,8 @@
     "morgan": "^1.7.0",
     "node-sass-middleware": "^0.9.8",
     "nodemon": "^1.11.0",
-    "pg": "^6.0.2"
+    "pg": "^6.0.2",
+    "toastr": "^2.1.2"
   },
   "devDependencies": {
     "nodemon": "^1.9.2"

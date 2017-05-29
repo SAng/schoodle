@@ -1,32 +1,9 @@
 
 
 $(() => {
-  //Edit/Delete Button beside each user
 
-  // //Adds participants to table
-  // $('.add-participant-button').on('click', function (e) {
-  //   event.preventDefault();
-  //   // $(this).hide();
-  //   $('.add-participant').show();
-  //   // appends another row for more participants
-  //   var $row = $("<tr>").addClass("row");
-  //   var $buttonColumn = $("<td>").addClass("button-column")
-  //   var $participantColumn = $("<td>").addClass("participant-column");
-  //   var $editParticipantBtn = $("<button> Edit </button>").addClass("edit-participant");
-  //   var $submitButton = $("<input type='submit' value='Submit'>").addClass("submit-button");
-  //   var $deleteParticipantBtn = $("<button> Delete </button>").addClass("delete-participant");
-  //   var $div = $("<div>").addClass("add-participant");
-  //   var $textBox = $("<input type='text'>").addClass("text-box");
 
-  //   $buttonColumn.append( $editParticipantBtn, $deleteParticipantBtn, $submitButton );
-  //   $participantColumn.append( $textBox );
-  //   $row.append( $buttonColumn, $participantColumn );
-  //   $('.table-slot').append( $row );
-
-  // });
-// debugger;
-
-  $('.add-participant-button').on('click', function (e) {
+  $('#add-participant').on('click', function (e) {
     event.preventDefault();
     $.ajax({
     type: "POST",
@@ -82,22 +59,17 @@ $(() => {
 
 $( document ).ready(function() {
     $('#long-url').val(window.location.href);
-    // debugger
+
 
 
 });
 
 
   //Copy button on long URL
-  $('.fa.fa-clipboard').on('click', function(e) {
+  $('#copy-button').on('click', function(e) {
     e.preventDefault();
-    function copyToClipboard(element) {
-      var $temp = $("<input>");
-      $("body").append($temp);
-      $temp.val($(element).text()).select();
-      document.execCommand("copy");
-      $temp.remove();
-    }
+    window.prompt("Copy to clipboard: Ctrl+C, Enter", window.location.href);
+
   });
 
   //POST request when someone add themselves as participant
@@ -105,14 +77,7 @@ $( document ).ready(function() {
     e.preventDefault();
   });
 
-  //SUBMIT to add participants/time slots to database
 
- function getDateString() {
-  var monthNames = [ "January", "February", "March", "April", "May", "June",
-  "July", "August", "September", "October", "November", "December" ];
-  //return monthNames[date.getMonth()];
-  return "hi";
-  };
 
 
 });
