@@ -39,7 +39,8 @@
           <% for (var slot of slots) { %>
             <% var month = slot.date.getMonth() + 1; %>
             <% var day = slot.date.getDay(); %>
-            <th> <%= month, day %></br> <%= slot.start_time %>-</br> <%= slot.end_time %> </th>
+            <% var year = slot.date.getYear(); %>
+            <th> <%= month %><%= day %><%= year %></br> <%= slot.start_time %>-</br> <%= slot.end_time %> </th>
           <% } %>
         </tr >
         <% for (var user_id in users) { %>
@@ -65,13 +66,16 @@
         <% } %>
       </table>
     </main>
+
+    <main class="container">
+      <h1>Share the Event</h1>
+      <section class="long-url">
+        <div class="long-url">
+          <input type="text" class="long-url" id="long-url" name="long-url" value="">
+        </div>
+      </section>
+    </main>
+
   </body>
 
-  <footer class="footer">
-    <section class="long-url">
-      <div class="long-url">
-        <input type="text" class="long-url" id="long-url" name="long-url" value="">
-      </div>
-    </section>
-  </footer>
 </html>

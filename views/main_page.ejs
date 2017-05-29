@@ -26,9 +26,8 @@
 
 
   <main class="container">
-    <!-- <div class="col-xs-8 col-xs-offset-2"> -->
     <section class="event-details">
-
+    <h1>Step 1 of 2</h1>
       <form class="form-horizontal" action="#" method="POST">
         <div class="control-group">
           <label class="control-label">Title:</label>
@@ -59,7 +58,7 @@
             <input type="checkbox"> Remember Password
           </label>
         </div>
-        <input type="submit" class="continue-button" value="Continue">
+        <input type="submit" class="btn" id="continue-button" value="Continue">
       </form>
     </section>
 
@@ -86,18 +85,31 @@
 
 
     <section class="event-date-time">
+        <h1>Step 2 of 2</h1>
+        <div class="titles">
+          <table class="table">
+            <tr>
+              <th>Date:</th>
+              <th>Start Time:</th>
+              <th>End Time:</th>
+              <th><input type="button" id="add-date-btn" class="btn" value="Add Date"></th>
+            </tr>
+          </table>
+        </div>
         <form class="date-picker-form" action="#" method="POST">
-          <input type="date" class="date-picker" name="date-picker">
-          <label for="start-time">Start Time:</label>
+          <div class="date-container1">
+            <input type="date" class="date-picker" name="date-picker">
+            <!-- <label class="start-time-label" for="start-time">Start Time:</label> -->
             <input type="time" class="start-time" name="start-time">
-          <label for="end-time">End Time:</label>
+            <!-- <label class="end-time-label" for="end-time">End Time:</label> -->
             <input type="time" class="end-time" name="end-time">
-          <input type="button" class="delete-date-button" style="display:none" value="x">
-          <input type="submit" class="btn" value="submit">
-          <input type="button" class="btn" value="Add Date">
+
+            <input type="button" id="delete-date-button" class="btn" style="display:none" value="x">
+          </div>
         </form>
+        <input type="submit" class="btn" value="submit">
     </section>
-    <!-- </div> -->
+
   </main>
 <!--     <section class="owner-info">
        <form action="#" method="POST">

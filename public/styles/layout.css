@@ -42,12 +42,15 @@ h1 {
 
 .start-time,
 .end-time     {
-  /*margin: 20px;
-  padding: 10px;*/
+  margin-right: 30px;
   font-size: x-large;
   border-radius: 12px;
   border-style: outset;
   border-width: thick;
+}
+
+.start-time {
+  margin-right: 50px;
 }
 
 .icon {
@@ -61,18 +64,35 @@ h1 {
 
 .btn {
   float: right;
+  color: black;
+}
+
+.btn:hover {
+  background-color: #B0A4BE;
+  color: white;
 }
 
 input.date-picker {
-  border-radius: 20px;
-  border-style: dashed;
+  border-radius: 11px;
+  border-style: solid;
   font-size: medium;
-  padding: 7px;
+  padding: 6px;
+  margin-right: 54px;
 }
 
 .form-horizontal {
   text-align: center;
 }
+
+th {
+  padding: 12px;
+  text-align: center;
+  width: 20%;
+  font-size: x-large;
+  color: grey;
+}
+
+
 
 
 
