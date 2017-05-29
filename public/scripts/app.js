@@ -25,9 +25,9 @@ $(() => {
     var $deleteButton = $("<input type='button' value='remove'>").addClass("delete-date-button");
 
     var $form = $("<form>").addClass("date-picker-form");
-    var $submitDateAndTime = $("<input type='button' class='submit-date-button' value='submit'>")
 
-    $form.append( $datePicker, $startTime, $endTime, $deleteButton, $submitDateAndTime );
+
+    $form.append( $datePicker, $startTime, $endTime, $deleteButton);
     $('.event-date-time').append( $form );
 
   });
@@ -56,9 +56,7 @@ $(() => {
           var date = ($(this).find(".date-picker").val());
           var start_time = ($(this).find(".start-time").val());
           var end_time = ($(this).find(".end-time").val());
-          validSlots = (date && start_time && end_time)
-        } else {
-          return;
+          validSlots = (date && start_time && end_time) ? true : false
         }
       });
 

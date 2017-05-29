@@ -7,9 +7,9 @@ const organize_data = require("../public/scripts/organize_data");
 
 module.exports = (knex) => {
 
-  router.get("/", (req, res) => {
-    res.render("main_page")
-  });
+router.get("/", (req, res) => {
+  res.render("main_page")
+});
 
 router.get("/:long_url", (req, res) => {
     const param = req.params.long_url;
