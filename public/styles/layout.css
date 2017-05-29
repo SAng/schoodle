@@ -1,11 +1,34 @@
 body {
   background-color: #eee;
+
+  h1 {
+    color: #244751;
+  }
 }
 
-body h1 {
-  color: #244751;
+.home.container {
+  background-color: #ffffff;
+  clear: both;
+  margin: 0 auto;
+  margin-top: 105px;
+  max-width: 50%;
+  padding: 2em;
+  border-radius: 20px;
 }
 
+.event-title,
+.event-description,
+.name {
+  width: 30%;
+  min-height: 50px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.control-label {
+  font-size: medium;
+  color: grey;
+}
 .container {
   background-color: #ffffff;
   clear: both;
@@ -32,44 +55,25 @@ h1 {
   background-color: white;
 }
 
-/* EVENT CREATION FORM */
-.event-title {
-  padding: 1%;
-  width: 30%;
-}
-
-.event-description {
-  padding: 1%;
-  width: 30%;
-}
-
-.owner-name,
-.owner-email {
-  padding: 1%;
-  width: 30%;
-}
-
-.submit-button {
-  margin: 5%;
-  padding: 2%;
-}
-
 .event-date-time {
   padding: 20px;
 }
 
 .date-picker {
-  padding: 20px;
+  padding: 30px;
 }
 
 .start-time,
-.end-time {
-  /*margin: 20px;
-  padding: 10px;*/
+.end-time     {
+  margin-right: 30px;
   font-size: x-large;
   border-radius: 12px;
   border-style: outset;
   border-width: thick;
+}
+
+.start-time {
+  margin-right: 101px;
 }
 
 .icon {
@@ -77,21 +81,49 @@ h1 {
 }
 
 .fa.fa-calendar-plus-o {
-  font-size: 230px;
-  color: grey;
+    font-size: 230px;
+    color: grey;
 }
 
 .btn {
   float: right;
+  color: black;
+}
+
+.btn:hover {
+  background-color: #B0A4BE;
+  color: white;
 }
 
 input.date-picker {
-  border-radius: 20px;
-  border-style: dashed;
+  border-radius: 11px;
+  border-style: solid;
   font-size: medium;
-  padding: 7px;
+  padding: 6px;
+  margin-right: 98px;
+  margin-left: 29px;
+  margin-bottom: 15px;
 }
 
 .form-horizontal {
   text-align: center;
+}
+
+th {
+  padding: 12px;
+  text-align: center;
+  width: 20%;
+  font-size: x-large;
+  color: grey;
+}
+
+.add-date-btn {
+  margin-right: -19px;
+  padding: 9px;
+  margin-top: 12px;
+  float: left;
+}
+
+btn.submit-date {
+  margin: 16px;
 }

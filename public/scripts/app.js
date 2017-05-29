@@ -10,7 +10,7 @@ $(() => {
       });
       $('.date-picker').show();
     } else {
-      alert('Plese fill all forms in ples ^_^')
+      alert('Plese fill all forms in please ^_^')
     }
   });
 

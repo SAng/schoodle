@@ -35,6 +35,8 @@ $(() => {
     $(this).closest('tr').addClass('editable');
     $(this).closest('tr').find('.participant-name').hide();
     $(this).closest('tr').find('.text-box').show();
+    $(this).closest('tr').find('.text-box').val($(this).closest('tr').find('.participant-name').html());
+    $(this).closest('tr').find('.text-box').focus();
     $(this).closest('tr').find('.fa').addClass('editable');
     $('i.fa.editable').on('click', function(e) {
       $(this).toggleClass('fa-check-circle');
