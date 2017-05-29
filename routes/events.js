@@ -7,11 +7,11 @@ const organize_data = require("../public/scripts/organize_data");
 
 module.exports = (knex) => {
 
-router.get("/", (req, res) => {
-  res.render("main_page")
-});
+  router.get("/", (req, res) => {
+    res.render("main_page");
+  });
 
-router.get("/:long_url", (req, res) => {
+  router.get("/:long_url", (req, res) => {
     const param = req.params.long_url;
     let promise1 = knex
                     .select("title", "description")
@@ -46,10 +46,10 @@ router.get("/:long_url", (req, res) => {
       .then((result) => {
         let promise2 = knex('slots')
                        .insert(req.body.slots.map((slot) => ({
-                            start_time: slot.start_time,
-                            end_time: slot.end_time,
-                            date: slot.date,
-                            events_id: result[0]
+                          start_time: slot.start_time,
+                          end_time: slot.end_time,
+                          date: slot.date,
+                          events_id: result[0]
                         })));
         let promise3 = knex('users')
                        .insert({
@@ -74,7 +74,7 @@ router.get("/:long_url", (req, res) => {
                  name: req.body.name,
                  events_id: result[0].id,
                  owner: false})
-               .then(function(){})
+               .then(function(){});
              });
        res.redirect("/events/" + req.params.long_url);
   });
@@ -85,10 +85,10 @@ router.get("/:long_url", (req, res) => {
     const longUrl = req.params.long_url;
     let promise1 = knex("users")
                     .where({'id': userId})
-                    .del()
+                    .del();
     let promise2 = knex("user_slots")
                     .where('users_id', userId)
-                    .del()
+                    .del();
     knex('events')
       .select()
       .leftJoin('users', 'events.id', 'events_id')
@@ -101,7 +101,7 @@ router.get("/:long_url", (req, res) => {
           });
         }
       }).then(validCombination => {return Promise.all([promise1, promise2])
-                                          .then(function(){})});
+                                          .then(function(){});});
         res.redirect("/events/" + req.params.long_url);
   });
 
@@ -112,7 +112,7 @@ router.get("/:long_url", (req, res) => {
     console.log(typeof req.body.slots);
     let promise1 = knex("users")
                     .where({'id': userId})
-                    .update({name: req.body.name})
+                    .update({name: req.body.name});
     let promise2 = knex("user_slots")
                     .where('users_id', userId)
                     .update({users_id: 0})
@@ -133,11 +133,11 @@ router.get("/:long_url", (req, res) => {
           });
         }
       }).then(validCombination => {return Promise.all([promise1, promise2, promise3])
-                                          .then(function(){})});
+                                          .then(function(){ });});
       res.redirect("/events/" + longUrl);
   });
   return router;
-}
+};
 
 
 
