@@ -1,129 +1,61 @@
-body {
-  background-color: #eee;
-
-  h1 {
-    color: #244751;
-  }
-}
-
-.home.container {
-  background-color: #ffffff;
-  clear: both;
-  margin: 0 auto;
-  margin-top: 105px;
-  max-width: 50%;
-  padding: 2em;
-  border-radius: 20px;
-}
-
-.event-title,
-.event-description,
-.name {
-  width: 30%;
-  min-height: 50px;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.control-label {
-  font-size: medium;
-  color: grey;
-}
-.container {
-  background-color: #ffffff;
-  clear: both;
-  margin: 0 auto;
-  margin-top: 105px;
-  max-width: 70%;
-  padding: 2em;
-  border-radius: 20px;
+.long-url {
+  padding: 37px;
 }
 
 h1 {
   text-align: center;
-  color: grey;
 }
 
-.create-button {
+.table-slot {
+  margin: auto;
+}
+
+.table-slot th {
+  padding: 10px;
+  font-size: large;
+}
+
+td {
+  padding: 10px;
   text-align: center;
 }
 
-.new-event {
-  margin: 30px;
-  padding: 15px;
+.editable {
+    background-color: #d3d3d3;
+}
+
+.row:before {
+    display: table;
+    content: none;
+}
+
+.fa.fa-check-circle,
+.fa.fa-circle-o {
+  font-size: 35px;
+  text-align: center;
+  color: grey;
+  padding: 18px;
+}
+
+#long-url {
+  width: 95%;
+  text-align: center;
+  font-size: x-large;
+  padding: 7px;
   border-radius: 10px;
-  background-color: white;
 }
 
-.event-date-time {
-  padding: 20px;
-}
-
-.date-picker {
-  padding: 30px;
-}
-
-.start-time,
-.end-time     {
-  margin-right: 30px;
-  font-size: x-large;
-  border-radius: 12px;
-  border-style: outset;
-  border-width: thick;
-}
-
-.start-time {
-  margin-right: 101px;
-}
-
-.icon {
+p {
   text-align: center;
-}
-
-.fa.fa-calendar-plus-o {
-    font-size: 230px;
-    color: grey;
-}
-
-.btn {
-  float: right;
-  color: black;
-}
-
-.btn:hover {
-  background-color: #B0A4BE;
-  color: white;
-}
-
-input.date-picker {
-  border-radius: 11px;
-  border-style: solid;
-  font-size: medium;
-  padding: 6px;
-  margin-right: 98px;
-  margin-left: 29px;
-  margin-bottom: 15px;
-}
-
-.form-horizontal {
-  text-align: center;
-}
-
-th {
-  padding: 12px;
-  text-align: center;
-  width: 20%;
-  font-size: x-large;
   color: grey;
+  font-size: large;
 }
 
-.add-date-btn {
-  margin-right: -19px;
-  padding: 9px;
-  margin-top: 12px;
-  float: left;
+.fa.fa-clipboard {
+  font-size: 21px;
+  margin-left: 13px;
 }
 
-btn.submit-date {
-  margin: 16px;
+.delete-participant {
+  margin-left: 20px;
 }
